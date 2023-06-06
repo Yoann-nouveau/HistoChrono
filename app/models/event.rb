@@ -11,12 +11,12 @@ class Event < ApplicationRecord
       message: "should be a four-digit year"
     }
   validates :end_year,
-  presence: true,
-  inclusion: { in: 1600..Date.today.year },
-  format: {
-    with: /(16|17|18|19|20)\d{2}/i,
-    message: "should be a four-digit year"
-  }
+    presence: true,
+    inclusion: { in: 1600..Date.today.year },
+    format: {
+      with: /(16|17|18|19|20)\d{2}/i,
+      message: "should be a four-digit year"
+    }
   validates :location, presence: true
   validates :description, presence: true
   validates :wikipedia_url, presence: true
