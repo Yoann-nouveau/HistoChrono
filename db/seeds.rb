@@ -5,11 +5,25 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+Period.destroy_all
+User.destroy_all
 
-user = User.create(
-  [{}])
+period = Period.create!(
+  [{ name: "La Révolution Française" },
+   { start_date: DateTime.new(1789, 5, 5) },
+   { end_date: DateTime.new(1799, 9, 5) }]
+)
+puts "period valide"
 
-monument = Monument.create(
+user = User.create!(
+  [{ email: "basile@mail.com" },
+   { password: "azerty" },
+   { fullname: "Basile de Beaulieu" },
+   { nickname: "Bazi" }]
+)
+puts "user valide"
+
+monument = Monument.create!(
   [{ name: "La Bastille" },
    { location: "Paris" },
    { description: "La bastille Saint-Antoine, souvent appelée
@@ -30,17 +44,12 @@ monument = Monument.create(
    { period_id: 1 },
    { user_id: 1 }]
 )
+puts "monument valide"
 
-period = Period.create(
-  [{ name: "La Révolution Française" },
-   { start_date: "1789-05-05" },
-   { end_date: "1799-05-09" }]
-)
-
-personality = Personality.create(
+personality = Personality.create!(
   [{ fullname: "Napoléon Bonaparte" },
-   { birthdate: "1769-08-15" },
-   { deathdate: "1821-05-05" },
+   { birthdate: DateTime.new(1769, 8, 15) },
+   { deathdate: DateTime.new(1821, 5, 5) },
    { description: "Napoléon Bonaparte, né le 15 août 1769 à Ajaccio
     et mort le 5 mai 1821 sur l'île de Sainte-Hélène, est un
     militaire et homme d'État français, premier empereur des
@@ -51,10 +60,11 @@ personality = Personality.create(
    { progess: 0.0 },
    { user_id: 1 }]
 )
+puts "personality valide"
 
-event = Event.create(
-  [{ start_date: '1789-07-14' },
-   { end_date: '1789-07-14' },
+event = Event.create!(
+  [{ start_date: DateTime.new(1789, 7, 14) },
+   { end_date: DateTime.new(1789, 7, 14) },
    { location: 'La Bastille - Paris' },
    { description: "La prise de la Bastille, survenue le mardi 14 juillet 1789
     à Paris, est l'un des événements inauguraux et emblématiques de la
@@ -71,3 +81,5 @@ event = Event.create(
    { period_id: 1 },
    { user_id: 1 }]
 )
+puts "event valide"
+puts "seeds finished !"
