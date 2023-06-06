@@ -4,9 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :monuments
-  has_many :events
-  has_many :personalities
-  has_one_attached :photo
+  has_many :monuments, dependent: :nullify
+  has_many :events, dependent: :nullify
+  has_many :personalities, dependent: :nullify
 
 end
