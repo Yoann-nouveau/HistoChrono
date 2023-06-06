@@ -5,8 +5,8 @@ class Monument < ApplicationRecord
   geocoded_by :location
   after_validation :geocode, if: :will_save_change_to_address?
 
-  valdiates :name, presence: true
-  valdiates :location, presence: true
-  valdiates :description , presence: true
-  valdiates :wikipedia_url , presence: true
+  validates :name, presence: true
+  validates :location, presence: true
+  validates :description , presence: true
+  validates :wikipedia_url , presence: true
 end
