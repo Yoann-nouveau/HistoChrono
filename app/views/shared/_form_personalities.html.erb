@@ -1,0 +1,8 @@
+<%= simple_form_for(@event) do |f| %>
+  <%= f.input :fullname %>
+  <%= f.input :birthdate %>
+  <%= f.input :deathdate %>
+  <%= f.input :description %>
+  <%= f.input :wikipedia_url %>
+  <%= f.submit 'Create a personality' %>
+  <% end %>
