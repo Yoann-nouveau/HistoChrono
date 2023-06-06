@@ -1,0 +1,8 @@
+<%= simple_form_for(@monument) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :location %>
+  <%= f.input :description %>
+  <%= f.input :wikipedia_url %>
+  <%= f.input :google_earth_url %>
+  <%= f.submit 'Create a monument' %>
+  <% end %>
