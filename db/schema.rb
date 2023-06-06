@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_06_113911) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_06_134720) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -43,8 +43,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_06_113911) do
   end
 
   create_table "events", force: :cascade do |t|
-    t.datetime "start_date"
-    t.datetime "end_date"
     t.string "location"
     t.text "description"
     t.string "wikipedia_url"
@@ -57,6 +55,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_06_113911) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
+    t.integer "start_day"
+    t.integer "start_month"
+    t.integer "start_year"
+    t.integer "end_day"
+    t.integer "end_month"
+    t.integer "end_year"
     t.index ["period_id"], name: "index_events_on_period_id"
     t.index ["user_id"], name: "index_events_on_user_id"
   end
@@ -89,8 +93,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_06_113911) do
 
   create_table "personalities", force: :cascade do |t|
     t.string "fullname"
-    t.datetime "birthdate"
-    t.datetime "deathdate"
     t.text "description"
     t.string "wikipedia_url"
     t.bigint "period_id", null: false
@@ -98,6 +100,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_06_113911) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "birth_day"
+    t.integer "birth_month"
+    t.integer "birth_year"
+    t.integer "death_day"
+    t.integer "death_month"
+    t.integer "death_year"
     t.index ["period_id"], name: "index_personalities_on_period_id"
     t.index ["user_id"], name: "index_personalities_on_user_id"
   end
