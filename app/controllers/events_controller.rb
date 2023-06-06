@@ -4,4 +4,34 @@ class EventsController < ApplicationController
     @event = Event.new
     @period = Period.find(params[:period_id])
   end
+
+  def create
+    @event = Event.new(event_params)
+    @period = Period.find(params[:period_id])
+    @event.user = current_user
+    @event.period = @period
+    if @event.save
+      redirect_to periods_path
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  private
+
+  def event_params
+    params.require(:event).permit(
+      :name,
+      :start_day,
+      :start_month,
+      :start_year,
+      :end_day,
+      :end_month,
+      :end_year,
+      :location,
+      :description,
+      :wikipedia_url,
+      :youtube_url
+    )
+  end
 end
