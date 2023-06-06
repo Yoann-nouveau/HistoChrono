@@ -5,6 +5,20 @@ class PeriodsController < ApplicationController
   end
 
   def show
-    @period = Period.find(param[:id])
+    @period = Period.find(params[:id])
+    @markers = @period.monuments.geocoded.map do |monument|
+      {
+        lat: monument.latitude,
+        lng: monument.longitude,
+        marker_html: render_to_string(partial: "monument_marker")
+      }
+    end
+    @markersevent = @period.events.geocoded.map do |event|
+      {
+        lat: event.latitude,
+        lng: event.longitude,
+        marker_html: render_to_string(partial: "event_marker")
+      }
+    end
   end
 end

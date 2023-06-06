@@ -1,5 +1,5 @@
 class Vote < ApplicationRecord
   belongs_to :user
 
-  vaildaites :vote, presence: true
+  validates :vote, presence: true
 end
