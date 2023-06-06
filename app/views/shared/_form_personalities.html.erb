@@ -1,7 +1,11 @@
-<%= simple_form_for(@event) do |f| %>
+<%= simple_form_for(@personality) do |f| %>
   <%= f.input :fullname %>
-  <%= f.input :birthdate %>
-  <%= f.input :deathdate %>
+  <%= f.input :birth_day%>
+  <%= f.input :birth_month%>
+  <%= f.input :birth_year%>
+  <%= f.input :death_day %>
+  <%= f.input :death_month %>
+  <%= f.input :death_year %>
   <%= f.input :description %>
   <%= f.input :wikipedia_url %>
   <%= f.submit 'Create a personality' %>
