@@ -5,11 +5,11 @@
 #
 #   movies = Movie.create([ name: "Star Wars" },  name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-Period.destroy_all
-User.destroy_all
-Monument.destroy_all
-Personality.destroy_all
-Event.destroy_all
+# Period.destroy_all
+# User.destroy_all
+# Monument.destroy_all
+# Personality.destroy_all
+# Event.destroy_all
 
 Period.create!(
   name: "La Révolution Française",
