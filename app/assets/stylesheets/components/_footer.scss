@@ -4,8 +4,6 @@
   background-position: bottom;
   background-size: cover;
   margin-top: 80px;
-  position: absolute;
-    bottom: 0px;
   color: white;
   display: flex;
   align-items: center;
@@ -34,58 +32,4 @@
 
 .footer .fa-heart {
   color: #D23333;
-}
-
-*, *:before, *:after{
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-html,body{
-  width: 100%;
-  height: 100%;
-}
-
-
-svg{
-  width:150px;
-  height:200px;
-}
-
-svg .hourglass{
-  stroke-dasharray: 185;
-  stroke-dashoffset: 0;
-  -webkit-animation: draw 4s linear infinite;
-  -moz-animation: draw 4s linear infinite;
-  animation: draw 4s linear infinite;
-}
-
-@-webkit-keyframes draw{
-  0%{
-    stroke-dashoffset: 752.3;
-  }
-  100%{
-    stroke-dashoffset: 0;
-  }
-}
-
-@-moz-keyframes draw{
-  0%{
-    stroke-dashoffset: 752.3;
-  }
-  100%{
-    stroke-dashoffset: 0;
-  }
-}
-
-@keyframes draw{
-  0%{
-    stroke-dashoffset: 752.3;
-  }
-  100%{
-    stroke-dashoffset: 0;
-  }
 }
