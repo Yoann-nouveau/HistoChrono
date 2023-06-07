@@ -1,4 +1,5 @@
 class PersonalitiesController < ApplicationController
+
   def new
     @personalities = Personality.new
   end
