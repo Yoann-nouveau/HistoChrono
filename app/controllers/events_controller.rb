@@ -11,7 +11,7 @@ class EventsController < ApplicationController
     @event.user = current_user
     @event.period = @period
     if @event.save
-      redirect_to periods_path
+      redirect_to period_path(@period)
     else
       render :new, status: :unprocessable_entity
     end
@@ -28,7 +28,7 @@ class EventsController < ApplicationController
       :end_day,
       :end_month,
       :end_year,
-      :location,
+      :address,
       :description,
       :wikipedia_url,
       :youtube_url
