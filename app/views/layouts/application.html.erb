@@ -11,13 +11,20 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <body><%= render "shared/navbar" %>
-<%= render "shared/flashes" %>
-<div class="shape">
-    <%= yield %>
-</div>
+  <body>
+    <%= render "shared/flashes" %>
+    <%= render "shared/navbar" %>
 
-  <%= render "shared/footer" %>
+    <div class="shape">
+
+      <% if params[:action] != "home" %>
+        <%= yield %>
+        <%= render "shared/footer" %>
+        <% else %>
+        <%= yield %>
+      <% end %>
+
+    </div>
 
   </body>
 </html>
