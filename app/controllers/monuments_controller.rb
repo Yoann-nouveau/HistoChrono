@@ -11,7 +11,7 @@ class MonumentsController < ApplicationController
     @monument.user = current_user
     @monument.period = @period
     if @monument.save
-      redirect_to period_path
+      redirect_to period_path(@period)
     else
       render :new, status: :unprocessable_entity
     end
@@ -22,7 +22,7 @@ class MonumentsController < ApplicationController
   def monument_params
     params.require(:monument).permit(
       :name,
-      :location,
+      :address,
       :description,
       :wikipedia_url,
       :google_earth_url
