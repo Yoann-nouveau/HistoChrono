@@ -17,9 +17,38 @@
 }
 
 .dropdown-menu {
+  border: 0;
   background-color: #27374D;
+  border-radius: 5px;
+  background: transparent;
 }
 
 a.dropdown-item {
   color:white;
+  background-color: #27374D;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+.period-add-list li {
+  opacity: 0;
+}
+
+.period-add-list.show {
+  li:first-child {
+    animation: 0.2s linear forwards slidein;
+  }
+
+  li:nth-child(2) {
+    animation: 0.2s linear 0.5s forwards slidein;
+  }
+
+  li:last-child {
+    animation: 0.2s linear 1s forwards slidein;
+  }
+}
+
+@keyframes slidein {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
