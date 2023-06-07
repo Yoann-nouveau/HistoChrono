@@ -5,11 +5,11 @@
 #
 #   movies = Movie.create([ name: "Star Wars" },  name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-# Period.destroy_all
-# User.destroy_all
-# Monument.destroy_all
-# Personality.destroy_all
-# Event.destroy_all
+Period.destroy_all
+User.destroy_all
+Monument.destroy_all
+Personality.destroy_all
+Event.destroy_all
 
 Period.create!(
   name: "La Révolution Française",
@@ -29,7 +29,7 @@ puts "user valide"
 
 Monument.create!(
   name: "La Bastille",
-  location: "Paris",
+  address: "Paris",
   description: "La bastille Saint-Antoine, souvent appelée
   simplement la Bastille et anciennement fort et bastide
   Saint-Anthoine lez Paris1,2, est une forteresse construite
@@ -45,32 +45,40 @@ Monument.create!(
   progess: 0.0,
   latitude: 48.5112,
   longitude: 2.2209,
-  period_id: 1,
-  user_id: 1
+  period_id: 8,
+  user_id: 7
 )
 puts "monument valide"
 
 Personality.create!(
   fullname: "Napoléon Bonaparte",
-  birthdate: Date.new(1769, 8, 15),
-  deathdate: Date.new(1821, 5, 5),
+  birth_day: 15,
+  birth_month: 8,
+  birth_year: 1769,
+  death_day: 5,
+  death_month: 5,
+  death_year: 1821,
   description: "Napoléon Bonaparte, né le 15 août 1769 à Ajaccio
   et mort le 5 mai 1821 sur l'île de Sainte-Hélène, est un
   militaire et homme d'État français, premier empereur des
   Français du 18 mai 1804 au 6 avril 1814 et du 20 mars au
   22 juin 1815, sous le nom de Napoléon Ier.",
   wikipedia_url: "https://fr.wikipedia.org/wiki/Napol%C3%A9on_Ier",
-  period_id: 1,
+  period_id: 8,
   progess: 0.0,
-  user_id: 1
+  user_id: 7
 )
 puts "personality valide"
 
 Event.create!(
   name: "Prise de la Bastille",
-  start_date: DateTime.new(1789, 7, 14),
-  end_date: DateTime.new(1789, 7, 14),
-  location: 'La Bastille - Paris',
+  start_day: 14,
+  start_month: 7,
+  start_year: 1789,
+  end_day: 14,
+  end_month: 7,
+  end_year: 1789,
+  address: 'La Bastille - Paris',
   description: "La prise de la Bastille, survenue le mardi 14 juillet 1789
   à Paris, est l'un des événements inauguraux et emblématiques de la
   Révolution française. Cette journée, durant laquelle la Bastille est
@@ -83,8 +91,8 @@ Event.create!(
   progess: 0.0,
   latitude: 48.5111,
   longitude: 2.2209,
-  period_id: 1,
-  user_id: 1
+  period_id: 8,
+  user_id: 7
 )
 
 puts "event valide"
