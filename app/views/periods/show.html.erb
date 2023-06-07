@@ -8,4 +8,8 @@
     data-map-markersevent-value="<%= @markersevent.to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
+  <% if user_signed_in? %>
+    <%= render "shared/button_add" %>
+  <% end %>
+
 </div>

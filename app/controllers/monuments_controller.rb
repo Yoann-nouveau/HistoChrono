@@ -11,7 +11,7 @@ class MonumentsController < ApplicationController
     @monument.user = current_user
     @monument.period = @period
     if @monument.save
-      redirect_to periods_path
+      redirect_to period_path
     else
       render :new, status: :unprocessable_entity
     end
