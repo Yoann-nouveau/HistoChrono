@@ -15,6 +15,7 @@ export default class extends Controller {
       container: this.element,
       style: "mapbox://styles/alexmcfly/clikchnpc00en01qvd5kjhaz3"
     })
+
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
   }
