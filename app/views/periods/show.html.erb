@@ -12,18 +12,17 @@
       </div>
     <% end %>
 
+<div class="container">
+  <div style="width: 100%; height: 600px;"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-polygon-value="<%= @polygon.to_json%>"
+    data-map-markersevent-value="<%= @markersevent.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
-
-  <div class="container">
-    <div style="width: 100%; height: 600px;"
-      data-controller="map"
-      data-map-markers-value="<%= @markers.to_json %>"
-      data-map-markersevent-value="<%= @markersevent.to_json %>"
-      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
-    <% if user_signed_in? %>
-      <%= render "shared/button_add" %>
-    <% end %>
+  <% if user_signed_in? %>
+    <%= render "shared/button_add" %>
+  <% end %>
 
   </div>
 </div>

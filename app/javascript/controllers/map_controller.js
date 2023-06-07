@@ -5,7 +5,8 @@ export default class extends Controller {
   static values = {
     apiKey: String,
     markers: Array,
-    markersevent: Array
+    markersevent: Array,
+    polygon: Object
   }
 
   connect() {
@@ -16,6 +17,7 @@ export default class extends Controller {
       style: "mapbox://styles/alexmcfly/clikchnpc00en01qvd5kjhaz3"
     })
 
+    this.#addPolygonToMap()
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
   }
@@ -40,6 +42,40 @@ export default class extends Controller {
   #fitMapToMarkers() {
     const bounds = new mapboxgl.LngLatBounds()
     this.markersValue.forEach(marker => bounds.extend([ marker.lng, marker.lat ]))
+    this.markerseventValue.forEach(markerevent => bounds.extend([ markerevent.lng, markerevent.lat ]))
     this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })
+  }
+
+  #addPolygonToMap () {
+    this.map.on('load', () => {
+      // Add a data source containing GeoJSON data.
+      this.map.addSource('polygon', {
+          'type': 'geojson',
+          'data': this.polygonValue.features[0]
+      });
+
+      // Add a new layer to visualize the polygon.
+      this.map.addLayer({
+          'id': 'main',
+          'type': 'fill',
+          'source': 'polygon', // reference the data source
+          'layout': {},
+          'paint': {
+              'fill-color': '#9DB2BF', // blue color fill
+              'fill-opacity': 0.1
+          }
+      });
+      // Add a black outline around the polygon.
+      this.map.addLayer({
+          'id': 'outline',
+          'type': 'line',
+          'source': 'polygon',
+          'layout': {},
+          'paint': {
+              'line-color': '#27374D',
+              'line-width': 3
+          }
+      });
+  });
   }
 }
