@@ -7,11 +7,8 @@
 #   Character.create(name: "Luke", movie: movies.first)
 Period.destroy_all
 User.destroy_all
-Monument.destroy_all
-Personality.destroy_all
-Event.destroy_all
 
-Period.create!(
+french_revolution = Period.create!(
   name: "La Révolution Française",
   start_date: Date.new(1789, 5, 5),
   end_date: Date.new(1799, 9, 5)
@@ -19,7 +16,7 @@ Period.create!(
 
 puts "period valide"
 
-User.create!(
+basile = User.create!(
   email: "basile@mail.com",
   password: "azerty",
   fullname: "Basile de Beaulieu",
@@ -45,8 +42,8 @@ Monument.create!(
   progess: 0.0,
   latitude: 48.5112,
   longitude: 2.2209,
-  period_id: 8,
-  user_id: 7
+  period_id: french_revolution.id,
+  user_id: basile.id
 )
 puts "monument valide"
 
@@ -64,9 +61,9 @@ Personality.create!(
   Français du 18 mai 1804 au 6 avril 1814 et du 20 mars au
   22 juin 1815, sous le nom de Napoléon Ier.",
   wikipedia_url: "https://fr.wikipedia.org/wiki/Napol%C3%A9on_Ier",
-  period_id: 8,
+  period_id: french_revolution.id,
   progess: 0.0,
-  user_id: 7
+  user_id: basile.id
 )
 puts "personality valide"
 
@@ -91,8 +88,8 @@ Event.create!(
   progess: 0.0,
   latitude: 48.5111,
   longitude: 2.2209,
-  period_id: 8,
-  user_id: 7
+  period_id: french_revolution.id,
+  user_id: basile.id
 )
 
 puts "event valide"
