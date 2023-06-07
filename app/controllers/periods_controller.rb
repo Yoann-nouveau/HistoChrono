@@ -20,5 +20,6 @@ class PeriodsController < ApplicationController
         marker_html: render_to_string(partial: "event_marker")
       }
     end
+    @polygon = @period.polygons
   end
 end

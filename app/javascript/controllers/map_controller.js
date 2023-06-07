@@ -5,7 +5,8 @@ export default class extends Controller {
   static values = {
     apiKey: String,
     markers: Array,
-    markersevent: Array
+    markersevent: Array,
+    polygon: Object
   }
 
   connect() {
@@ -50,7 +51,7 @@ export default class extends Controller {
       // Add a data source containing GeoJSON data.
       this.map.addSource('polygon', {
           'type': 'geojson',
-          'data': './map.geojson'
+          'data': this.polygonValue.features[0]
       });
 
       // Add a new layer to visualize the polygon.
@@ -60,8 +61,8 @@ export default class extends Controller {
           'source': 'polygon', // reference the data source
           'layout': {},
           'paint': {
-              'fill-color': '#0080ff', // blue color fill
-              'fill-opacity': 0.5
+              'fill-color': '#9DB2BF', // blue color fill
+              'fill-opacity': 0.1
           }
       });
       // Add a black outline around the polygon.
@@ -71,7 +72,7 @@ export default class extends Controller {
           'source': 'polygon',
           'layout': {},
           'paint': {
-              'line-color': '#000',
+              'line-color': '#27374D',
               'line-width': 3
           }
       });
