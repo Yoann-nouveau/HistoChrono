@@ -20,13 +20,9 @@ class PeriodsController < ApplicationController
         marker_html: render_to_string(partial: "event_marker")
       }
     end
-<<<<<<< HEAD
 
     @personalities = Personality.where(period: @period)
 
-
-=======
     @polygon = @period.polygons
->>>>>>> master
   end
 end
