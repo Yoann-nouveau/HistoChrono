@@ -20,5 +20,9 @@ class PeriodsController < ApplicationController
         marker_html: render_to_string(partial: "event_marker")
       }
     end
+
+    @personalities = Personality.where(period: @period)
+
+
   end
 end
