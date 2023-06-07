@@ -1,11 +1,18 @@
 
 .shape {
-  .home-container {
-    width: 100%;
-    height: 100%;
-    text-align:center;
-    background-image: url("https://wallpaperaccess.com/full/333707.jpg");
-    background-position: center;
-    background-size: cover;
+
+  @keyframes animate {
+    0%{background-image: url(https://wallpaperaccess.com/full/192243.jpg),url(https://i.etsystatic.com/10097575/r/il/6f9edd/2715855903/il_fullxfull.2715855903_lsfg.jpg);}
+    50%{background-image: url(https://wallpaperaccess.com/full/192243.jpg),url(https://storage.googleapis.com/pod_public/1300/95860.jpg);}
+    100%{background-image: url(https://wallpaperaccess.com/full/192243.jpg),url(https://happywall-img-gallery.imgix.net/30302/black_and_white_world_map_display.jpg);}
+  }
+
+  .stage{
+  animation: animate 20s infinite linear forwards;
+  background-blend-mode: difference;
+  background-image: url(https://wallpaperaccess.com/full/192243.jpg),url(https://wallpaperaccess.com/full/333707.jpg);
+  background-size:auto 100%,cover;
+  background-repeat:no-repeat,repeat-x;
+  background-position: 50% 100%,100% 50%;
   }
 }
