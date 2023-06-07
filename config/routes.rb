@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :periods, only: [:index, :show] do
     resources :monuments, only: [:new, :create]
     resources :events, only: [:new, :create]
+    resources :personalities, only: [:new, :create]
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
