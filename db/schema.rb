@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_06_134720) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_07_065748) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -43,7 +43,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_06_134720) do
   end
 
   create_table "events", force: :cascade do |t|
-    t.string "location"
     t.text "description"
     t.string "wikipedia_url"
     t.string "youtube_url"
@@ -61,13 +60,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_06_134720) do
     t.integer "end_day"
     t.integer "end_month"
     t.integer "end_year"
+    t.string "address"
     t.index ["period_id"], name: "index_events_on_period_id"
     t.index ["user_id"], name: "index_events_on_user_id"
   end
 
   create_table "monuments", force: :cascade do |t|
     t.string "name"
-    t.string "location"
     t.text "description"
     t.string "wikipedia_url"
     t.string "google_earth_url"
@@ -78,6 +77,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_06_134720) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "address"
     t.index ["period_id"], name: "index_monuments_on_period_id"
     t.index ["user_id"], name: "index_monuments_on_user_id"
   end
