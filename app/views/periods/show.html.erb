@@ -1,6 +1,12 @@
-
 <div class="container">
-
+ <div>
+   <%= render "shared/searchbar" %>
+ </div>
+  <% if @period.nil? %>
+    Sorry we don't have this period in the database yet
+  <% else %>
+    Find all important monuments on the map
+  <% end %>
   <div class="row" id="personalities-row">
     <div class="cards col-sm-9">
       <% @personalities.each do |personality|  %>
