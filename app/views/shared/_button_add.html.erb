@@ -3,8 +3,8 @@
     <i class="fa-solid fa-plus"></i>
   </button>
   <ul class="dropdown-menu active period-add-list">
-    <li><a class="dropdown-item"<%= link_to "Ajouter un évènement", new_period_event_path(params[:id]) %>></a></li>
-    <li><a class="dropdown-item" <%= link_to "Ajouter un monument", new_period_monument_path(params[:id]) %>></a></li>
-    <li><a class="dropdown-item" <%= link_to "Ajouter une personnalité", new_period_personality_path(params[:id]) %>></a></li>
+    <li><%= link_to "Ajouter un évènement", new_period_event_path(params[:id]), class:"dropdown-item" %></li>
+    <li><%= link_to "Ajouter un monument", new_period_monument_path(params[:id]), class:"dropdown-item" %></li>
+    <li><%= link_to "Ajouter une personnalité", new_period_personality_path(params[:id]), class:"dropdown-item" %></li>
   </ul>
 </div>

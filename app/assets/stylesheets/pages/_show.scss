@@ -1,0 +1,37 @@
+.box-map {
+  display: flex;
+  width: 75%;
+  height: 75%;
+  box-shadow: 0 0 15px rgba(1, 1, 1, 0.7);
+  justify-content: flex-end;
+
+}
+
+.box-legend {
+  display: flex;
+  width: 25%;
+  height: 600px;
+  border: 10px, solid, black;
+  margin-right: 10px;
+  overflow-y: scroll;
+}
+
+.box-legend::-webkit-scrollbar {
+  display: none;
+}
+
+#map-row {
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.cards {
+  margin-top: 15px;
+  display: flex;
+  justify-content: flex-start
+}
+
+#personalities-row {
+  display: flex;
+  justify-content: flex-end;
+}
