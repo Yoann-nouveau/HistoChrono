@@ -59,6 +59,8 @@ Monument.create!(
   period_id: french_revolution.id,
   user_id: basile.id
 )
+puts "Bastille créée"
+
 puts "monuments validés"
 
 Personality.create!(
@@ -76,6 +78,34 @@ Personality.create!(
   22 juin 1815, sous le nom de Napoléon Ier.",
   wikipedia_url: "https://fr.wikipedia.org/wiki/Napol%C3%A9on_Ier",
   period_id: french_revolution.id,
+  progess: 0.0,
+  user_id: basile.id
+)
+puts "Napoléon créé"
+
+Personality.create!(
+  fullname: "Charles de Gaulle",
+  birth_day: 22,
+  birth_month: 11,
+  birth_year: 1890,
+  death_day: 9,
+  death_month: 11,
+  death_year: 1970,
+  description: "Charles de Gaulle, communément appelé le général de Gaulle ou parfois simplement le Général, né le 22 novembre 1890 à Lille (Nord) et mort le 9 novembre 1970 à Colombey-les-Deux-Églises (Haute-Marne), est un militaire, résistant, homme d'État et écrivain français.",
+  wikipedia_url: "https://fr.wikipedia.org/wiki/Charles_de_Gaulle",
+  period_id: occupation.id,
+  progess: 0.0,
+  user_id: basile.id
+)
+puts "De Gaulle créé"
+
+Personality.create!(
+  fullname: "Jonathan Serafini",
+  birth_year: 1984,
+  death_year: nil,
+  description: "CEO & Développeur web fullstack chez MIHIVAI",
+  wikipedia_url: "https://www.linkedin.com/in/jonathan-serafini-01a568119/?originalSubdomain=fr",
+  period_id: maintenant.id,
   progess: 0.0,
   user_id: basile.id
 )
@@ -105,6 +135,7 @@ Event.create!(
   period_id: french_revolution.id,
   user_id: basile.id
 )
+puts "Prise de la Bastille créée"
 
 puts "event validés"
 puts "seeds finished !"
