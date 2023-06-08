@@ -22,6 +22,7 @@ class PeriodsController < ApplicationController
     end
 
     @personalities = Personality.where(period: @period)
+
     @polygon = @period.polygons
   end
 end

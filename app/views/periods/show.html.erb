@@ -1,27 +1,39 @@
 
-<div class="main-container">
-  <h1>Periods#show</h1>
-  <p>Find me in app/views/periods/show.html.erb</p>
+<div class="container">
 
-  <div class="cards">
-    <% @personalities.each do |personality|  %>
-      <div class="card-trip">
-        <a class="avatar" href="<%= personality.wikipedia_url %>" target="_blank">
-          <%= image_tag "https://i.pinimg.com/280x280_RS/78/8f/03/788f0311f79553a27796ca41a91df633.jpg", class: "avatar", alt: "Napoléon I", title: "Napoléon I" %>
-        </a>
-      </div>
-    <% end %>
-  </div>
-  
-  <div class="container">
-    <div style="width: 100%; height: 600px;"
-      data-controller="map"
-      data-map-markers-value="<%= @markers.to_json %>"
-      data-map-polygon-value="<%= @polygon.to_json%>"
-      data-map-markersevent-value="<%= @markersevent.to_json %>"
-      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  <div class="row" id="personalities-row">
+    <div class="cards col-sm-9">
+      <% @personalities.each do |personality|  %>
+        <div class="card-trip">
+          <a class="avatar" href="<%= personality.wikipedia_url %>" target="_blank">
+            <%= image_tag "https://i.pinimg.com/280x280_RS/78/8f/03/788f0311f79553a27796ca41a91df633.jpg", class: "avatar", alt: "Napoléon I", title: "Napoléon I" %>
+          </a>
+        </div>
+      <% end %>
     </div>
-    <% if user_signed_in? %>
-      <%= render "shared/button_add" %>
-    <% end %>
+  </div>
+
+  <div class="row" id="map-row">
+
+    <div class="box-legend col">
+      <div class="row">
+        <div class="col-md-12">
+          <%= render "shared/timeline" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="box-map col-sm-8">
+      <div style="width: 100%; height: 600px;"
+        data-controller="map"
+        data-map-markers-value="<%= @markers.to_json %>"
+        data-map-polygon-value="<%= @polygon.to_json%>"
+        data-map-markersevent-value="<%= @markersevent.to_json %>"
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+      <% if user_signed_in? %>
+        <%= render "shared/button_add" %>
+      <% end %>
+    </div>
+  </div>
 </div>
