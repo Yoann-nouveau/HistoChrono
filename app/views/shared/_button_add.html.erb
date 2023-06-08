@@ -3,8 +3,48 @@
     <i class="fa-solid fa-plus"></i>
   </button>
   <ul class="dropdown-menu active period-add-list">
-    <li><%= link_to "Ajouter un évènement", new_period_event_path(params[:id]), class:"dropdown-item" %></li>
-    <li><%= link_to "Ajouter un monument", new_period_monument_path(params[:id]), class:"dropdown-item" %></li>
-    <li><%= link_to "Ajouter une personnalité", new_period_personality_path(params[:id]), class:"dropdown-item" %></li>
+    <li><a class="dropdown-item" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">Ajouter un évènement</a></li>
+    <%# <li><%= link_to "Ajouter un évènement", new_period_event_path(params[:id]), class:"dropdown-item" %>
+    <li><a class="dropdown-item" data-bs-toggle="offcanvas" href="#offcanvasMonument" role="button" aria-controls="offcanvasExample">Ajouter un monument</a></li>
+    <%# <li><%= link_to "Ajouter un monument", new_period_monument_path(params[:id]), class:"dropdown-item" %>
+    <li><a class="dropdown-item" data-bs-toggle="offcanvas" href="#offcanvasPerso" role="button" aria-controls="offcanvasExample">Ajouter un personnage</a></li>
+    <%# <li><%= link_to "Ajouter une personnalité", new_period_personality_path(params[:id]), class:"dropdown-item" %>
   </ul>
+</div>
+
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Ajouter un évènement</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div>
+       <%= render "shared/form_events" %>
+    </div>
+  </div>
+</div>
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMonument" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Ajouter un monument</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div>
+       <%= render "shared/form_monuments" %>
+    </div>
+  </div>
+</div>
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasPerso" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Ajouter un personnage</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div>
+       <%= render "shared/form_personalities" %>
+    </div>
+  </div>
 </div>

@@ -33,5 +33,9 @@ class PeriodsController < ApplicationController
     end
     @personalities = Personality.where(period: @period)
     @polygon = @period.polygons
+    @event = Event.new
+    @monument = Monument.new
+    @personality = Personality.new
+    @period = Period.find(params[:id])
   end
 end
