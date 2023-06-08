@@ -1,4 +1,4 @@
-<%= simple_form_for(@period, @personality) do |f| %>
+<%= simple_form_for [@period, @personality] do |f| %>
   <%= f.input :fullname %>
   <%= f.input :birth_day%>
   <%= f.input :birth_month%>
