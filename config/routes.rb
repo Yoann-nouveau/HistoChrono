@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'monuments/new'
   get 'monuments/create'
+  get 'redirection', to: 'periods#redirection'
   devise_for :users
   root to: "pages#home"
   resources :periods, only: [:index, :show] do
