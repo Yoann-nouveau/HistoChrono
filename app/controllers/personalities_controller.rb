@@ -2,6 +2,7 @@ class PersonalitiesController < ApplicationController
 
   def new
     @personalities = Personality.new
+    @period = Period.find(params[:period_id])
   end
 
   def create
