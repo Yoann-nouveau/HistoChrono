@@ -10,7 +10,7 @@ class PeriodsController < ApplicationController
     if @period
       redirect_to period_path(@period)
     else
-      redirect_to request.referer, alert: "cette date n'est pas encore présente"
+      redirect_to request.referer, alert: "Oups, cette date n'est pas encore disponible"
     end
   end
 

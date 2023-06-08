@@ -2,8 +2,8 @@
   <%= text_field_tag :query,
         params[:query],
         class: "form-control",
-        placeholder: "Enter a year"
-      %>
+        placeholder: "Enter a year",
+        value: rand(1789..2023)
+    %>
   <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
 <% end %>
-</i>
