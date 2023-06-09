@@ -7,5 +7,4 @@ class User < ApplicationRecord
   has_many :monuments, dependent: :nullify
   has_many :events, dependent: :nullify
   has_many :personalities, dependent: :nullify
-
 end
