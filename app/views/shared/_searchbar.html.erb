@@ -2,8 +2,10 @@
   <%= text_field_tag :query,
         params[:query],
         class: "form-control",
-        placeholder: "Enter a year"
+        placeholder: "Enter a year",
+        id: "year-search"
       %>
-  <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+  <button name="button" type="submit" class="btn-hiden">
+        <i class="fas fa-search"></i></button>
 <% end %>
 </i>

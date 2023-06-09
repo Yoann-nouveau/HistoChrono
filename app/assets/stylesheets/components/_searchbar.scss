@@ -2,6 +2,36 @@
   position: relative;
 }
 
+#year-search {
+  border-radius: 20px;
+}
+
+#year-search-home {
+  border-radius: 20px;
+}
+
+.search-home {
+  position: absolute;
+  top: 81%;
+  left: 19%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+#year-search-home {
+  background-color: #27374D;
+  color: white;
+    &::placeholder {
+      color: white;
+    }
+  }
+
+  #home-button {
+    .fa-search {
+      color: white;
+    }
+  }
+
 .search-form-control .btn {
   position: absolute;
   top: 8px;
@@ -21,9 +51,9 @@
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
-.search-home {
-  width: 150px;
-  position: absolute;
-  bottom: 254px;
-  left: 656px;
+.btn-hiden {
+  background-color: transparent;
+  border: transparent;
+  margin-left: -30px;
+  z-index: 1;
 }
