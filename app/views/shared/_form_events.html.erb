@@ -1,16 +1,34 @@
 <%= simple_form_for [@period, @event] do |f| %>
-  <%= f.input :name %>
-  <%= f.input :start_day %>
-  <%= f.input :start_month %>
-  <%= f.input :start_year %>
-  <%= f.input :end_day %>
-  <%= f.input :end_month %>
-  <%= f.input :end_year %>
-  <%= f.input :address,
+  <%= f.input :name, label: "Nom" %>
+  <div class="row">
+    <%= f.label "Débute le" %>
+    <div class="col">
+      <%= f.input :start_day, placeholder: "Jour", label: false %>
+    </div>
+    <div class="col">
+      <%= f.input :start_month, prompt: "Mois", label: false, collection: ([["Janvier", 1], ["Février", 2], ["Mars", 3], ["Avril", 4], ["Mai", 5], ["Juin", 5], ["Juillet", 7], ["Aout", 8], ["Septembre", 9], ["Octobre", 10], ["Novembre", 11], ["Décembre", 12]])  %>
+    </div>
+    <div class="col">
+      <%= f.input :start_year, placeholder: "Année", label: false %>
+    </div>
+  </div>
+  <div class="row">
+    <%= f.label "Fini le" %>
+    <div class="col">
+      <%= f.input :end_day, placeholder: "Jour", label: false%>
+    </div>
+    <div class="col">
+      <%= f.input :end_month, prompt: "Mois", label: false,  collection: ([["Janvier", 1], ["Février", 2], ["Mars", 3], ["Avril", 4], ["Mai", 5], ["Juin", 5], ["Juillet", 7], ["Aout", 8], ["Septembre", 9], ["Octobre", 10], ["Novembre", 11], ["Décembre", 12]]) %>
+    </div>
+    <div class="col">
+      <%= f.input :end_year, placeholder: "Année", label: false %>
+    </div>
+  </div>
+  <%= f.input :address, label: "Adresse",
   input_html: {data: {address_autocomplete_target: "address"}, class: "d-none"},
   wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}} %>
   <%= f.input :description %>
-  <%= f.input :wikipedia_url %>
-  <%= f.input :youtube_url %>
-  <%= f.submit 'Create an event' %>
+  <%= f.input :wikipedia_url, label: "Page Wikipédia"%>
+  <%= f.input :youtube_url, label: "Vidéo Youtube" %>
+  <%= f.submit 'Ajouter un évènement sur la carte' %>
   <% end %>

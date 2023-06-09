@@ -1,0 +1,4 @@
+meta_product_name: "HistoChrono"
+meta_title: "L'Histoire de France interactive"
+meta_description: "Visualisez l'Histoire de France à travers les cartes depuis 1789 jusqu'à nos jours"
+meta_image: "logo.png" # should exist in `app/assets/images/`
