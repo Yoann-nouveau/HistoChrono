@@ -56,16 +56,33 @@ export default class extends Controller {
   #addPolygonToMap () {
     this.map.on('load', () => {
       // Add a data source containing GeoJSON data.
-      this.map.addSource('polygon', {
-          'type': 'geojson',
-          'data': this.polygonValue.features[0]
-      });
+      const features = this.polygonValue.features.map((feature) => {
+        const result = {
+          'type': 'Feature',
+          'geometry': {
+            'type': 'Polygon',
+            'coordinates': [
+              feature.geometry.coordinates
+              ]
+            }
+          }
+        return result
+
+      })
+
+      this.map.addSource('paris', {
+        'type': 'geojson',
+        'data': {
+        'type': 'FeatureCollection',
+        'features': features
+        }
+        });
 
       // Add a new layer to visualize the polygon.
       this.map.addLayer({
           'id': 'main',
           'type': 'fill',
-          'source': 'polygon', // reference the data source
+          'source': 'paris', // reference the data source
           'layout': {},
           'paint': {
               'fill-color': '#9DB2BF', // blue color fill
@@ -76,7 +93,7 @@ export default class extends Controller {
       this.map.addLayer({
           'id': 'outline',
           'type': 'line',
-          'source': 'polygon',
+          'source': 'paris',
           'layout': {},
           'paint': {
               'line-color': '#27374D',
