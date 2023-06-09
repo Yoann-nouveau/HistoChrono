@@ -1,12 +1,12 @@
 <div class="form">
   <%= simple_form_for [@period, @monument] do |f| %>
-    <%= f.input :name %>
-    <%= f.input :address,
+    <%= f.input :name, label: "Nom" %>
+    <%= f.input :address, label: "Adresse",
   input_html: {data: {address_autocomplete_target: "address"}, class: "d-none"},
   wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}} %>
     <%= f.input :description %>
-    <%= f.input :wikipedia_url %>
-    <%= f.input :google_earth_url %>
-    <%= f.submit 'Create a monument' %>
+    <%= f.input :wikipedia_url, label: "Page Wikipédia" %>
+    <%= f.input :google_earth_url, label: "Lien vers Google Earth" %>
+    <%= f.submit 'Ajouter un monument sur la carte' %>
     <% end %>
 </div>
