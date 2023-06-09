@@ -14,9 +14,10 @@ export default class extends Controller {
 
     this.map = new mapboxgl.Map({
       container: this.element,
+      minZoom: 4,
       style: "mapbox://styles/alexmcfly/clikchnpc00en01qvd5kjhaz3"
     })
-
+    this.map.addControl(new mapboxgl.NavigationControl());
     this.#addPolygonToMap()
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
@@ -49,7 +50,7 @@ export default class extends Controller {
         52.76849938719249], // southwestern corner of the bounds
       [14.768697117463944,
         40.22151693600034] // northeastern corner of the bounds
-      ], { padding: 70, maxZoom: 15, minZoom: 30, duration: 0 })
+      ], { padding: 70, maxZoom: 15, duration: 0 })
   }
 
   #addPolygonToMap () {
