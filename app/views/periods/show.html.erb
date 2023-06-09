@@ -1,9 +1,7 @@
 <div class="container">
- <div>
-   <%= render "shared/searchbar" %>
- </div>
+
   <div class="row" id="personalities-row">
-    <div class="cards col-sm-9">
+    <div class="cards col-sm-6">
       <% @personalities.each do |personality|  %>
         <div class="card-trip">
           <a class="avatar" href="<%= personality.wikipedia_url %>" target="_blank">
@@ -11,6 +9,10 @@
           </a>
         </div>
       <% end %>
+    </div>
+
+    <div class="search-row col-sm-3">
+      <%= render "shared/searchbar" %>
     </div>
   </div>
 

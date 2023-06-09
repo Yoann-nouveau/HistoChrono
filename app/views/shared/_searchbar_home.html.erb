@@ -3,7 +3,9 @@
         params[:query],
         class: "form-control",
         placeholder: "Enter a year",
-        value: rand(1789..2023)
+        value: rand(1789..2023),
+        id: "year-search-home"
     %>
-  <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+  <button name="button" type="submit" class="btn-hiden" id="home-button">
+        <i class="fas fa-search"></i></button>
 <% end %>
