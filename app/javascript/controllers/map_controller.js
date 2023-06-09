@@ -40,10 +40,16 @@ export default class extends Controller {
   }
 
   #fitMapToMarkers() {
-    const bounds = new mapboxgl.LngLatBounds()
-    this.markersValue.forEach(marker => bounds.extend([ marker.lng, marker.lat ]))
-    this.markerseventValue.forEach(markerevent => bounds.extend([ markerevent.lng, markerevent.lat ]))
-    this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })
+    // const bounds = new mapboxgl.LngLatBounds()
+    // this.markersValue.forEach(marker => bounds.extend([ marker.lng, marker.lat ]))
+    // this.markerseventValue.forEach(markerevent => bounds.extend([ markerevent.lng, markerevent.lat ]))
+    // this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })
+    this.map.fitBounds([
+      [-11.396181192912564,
+        52.76849938719249], // southwestern corner of the bounds
+      [14.768697117463944,
+        40.22151693600034] // northeastern corner of the bounds
+      ], { padding: 70, maxZoom: 15, minZoom: 30, duration: 0 })
   }
 
   #addPolygonToMap () {
