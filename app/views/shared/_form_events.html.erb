@@ -6,7 +6,7 @@
       <%= f.input :start_day, placeholder: "Jour", label: false %>
     </div>
     <div class="col">
-      <%= f.input :start_month, placeholder: "Mois", label: false %>
+      <%= f.input :start_month, prompt: "Mois", label: false, collection: ([["Janvier", 1], ["Février", 2], ["Mars", 3], ["Avril", 4], ["Mai", 5], ["Juin", 5], ["Juillet", 7], ["Aout", 8], ["Septembre", 9], ["Octobre", 10], ["Novembre", 11], ["Décembre", 12]])  %>
     </div>
     <div class="col">
       <%= f.input :start_year, placeholder: "Année", label: false %>
@@ -18,7 +18,7 @@
       <%= f.input :end_day, placeholder: "Jour", label: false%>
     </div>
     <div class="col">
-      <%= f.input :end_month, placeholder: "Mois", label: false %>
+      <%= f.input :end_month, prompt: "Mois", label: false,  collection: ([["Janvier", 1], ["Février", 2], ["Mars", 3], ["Avril", 4], ["Mai", 5], ["Juin", 5], ["Juillet", 7], ["Aout", 8], ["Septembre", 9], ["Octobre", 10], ["Novembre", 11], ["Décembre", 12]]) %>
     </div>
     <div class="col">
       <%= f.input :end_year, placeholder: "Année", label: false %>
