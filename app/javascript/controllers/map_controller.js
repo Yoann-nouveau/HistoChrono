@@ -2,6 +2,8 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="map"
 export default class extends Controller {
+  static targets = ["checkboxevent", "checkboxmonument", "displaymap"]
+
   static values = {
     apiKey: String,
     markers: Array,
@@ -9,30 +11,53 @@ export default class extends Controller {
     polygon: Object
   }
 
-  connect() {
-    mapboxgl.accessToken = this.apiKeyValue
 
-    this.map = new mapboxgl.Map({
-      container: this.element,
-      minZoom: 4,
-      style: "mapbox://styles/alexmcfly/clikchnpc00en01qvd5kjhaz3"
-    })
-    this.map.addControl(new mapboxgl.FullscreenControl());
-    this.map.addControl(new mapboxgl.NavigationControl());
-    this.#addPolygonToMap()
-    this.#addMarkersToMap()
-    this.#fitMapToMarkers()
+  connect() {
+   this.#displayMap(this.markersValue, this.markerseventValue);
   }
 
-  #addMarkersToMap() {
-    this.markersValue.forEach((marker) => {
+  filterevent() {
+    if (this.checkboxeventTarget.checked) {
+      if (this.checkboxmonumentTarget.checked) {
+        this.#displayMap(this.markersValue, this.markerseventValue);
+      } else {
+        this.#displayMap([], this.markerseventValue);
+      }
+    } else {
+      if (this.checkboxmonumentTarget.checked) {
+        this.#displayMap(this.markersValue, []);
+      } else {
+        this.#displayMap([], [])
+      }
+    }
+  }
+
+  filtermonument() {
+    if (this.checkboxmonumentTarget.checked) {
+      if (this.checkboxeventTarget.checked) {
+        this.#displayMap(this.markersValue, this.markerseventValue);
+      } else {
+        this.#displayMap(this.markersValue, []);
+      }
+    } else {
+      if (this.checkboxeventTarget.checked) {
+        this.#displayMap([], this.markerseventValue);
+      } else {
+        this.#displayMap([], [])
+      }
+    }
+  }
+
+  #addMarkersToMap(markersvalue, markerseventvalue) {
+
+    markersvalue.forEach((marker) => {
       const customMarker = document.createElement("div")
     customMarker.innerHTML = marker.marker_html
       new mapboxgl.Marker(customMarker)
         .setLngLat([ marker.lng, marker.lat ])
         .addTo(this.map)
     })
-    this.markerseventValue.forEach((event) => {
+    markerseventvalue.forEach((event) => {
       const customMarker = document.createElement("div")
     customMarker.innerHTML = event.marker_html
       new mapboxgl.Marker(customMarker)
@@ -102,5 +127,19 @@ export default class extends Controller {
           }
       });
   });
+  }
+
+  #displayMap (markersvalue, markerseventvalue) {
+    mapboxgl.accessToken = this.apiKeyValue
+    this.map = new mapboxgl.Map({
+      container: this.displaymapTarget,
+      minZoom: 4,
+      style: "mapbox://styles/alexmcfly/clikchnpc00en01qvd5kjhaz3"
+    })
+    this.map.addControl(new mapboxgl.FullscreenControl());
+    this.map.addControl(new mapboxgl.NavigationControl());
+    this.#addPolygonToMap()
+    this.#addMarkersToMap(markersvalue, markerseventvalue)
+    this.#fitMapToMarkers()
   }
 }
