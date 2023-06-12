@@ -25,7 +25,8 @@ class MonumentsController < ApplicationController
       :address,
       :description,
       :wikipedia_url,
-      :google_earth_url
+      :google_earth_url,
+      :photo
     )
   end
 end
