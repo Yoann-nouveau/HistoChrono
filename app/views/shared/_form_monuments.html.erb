@@ -7,6 +7,7 @@
     <%= f.input :description %>
     <%= f.input :wikipedia_url, label: "Page Wikipédia" %>
     <%= f.input :google_earth_url, label: "Lien vers Google Earth" %>
+    <%= f.input :photo, as: :file %>
     <%= f.submit 'Ajouter un monument sur la carte' %>
     <% end %>
 </div>
