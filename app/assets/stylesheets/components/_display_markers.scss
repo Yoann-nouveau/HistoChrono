@@ -23,6 +23,16 @@
   color: #27374D;
 }
 
+.offcanvas-body {
+  #date_event {
+    font-family: 'Mate SC', serif;
+  }
+
+  #added_by{
+    font-family: 'Mate SC', serif;
+  }
+}
+
 .infos-event{
   .offcanvas-header{
   padding: 10px;
@@ -34,5 +44,4 @@
   .fa-brands {
     color: #8B635C;
   }
-
-}
+ }
