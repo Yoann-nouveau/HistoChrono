@@ -1,5 +1,5 @@
 <div class="form">
-  <%= simple_form_for [@period, @monument] do |f| %>
+  <%= simple_form_for [@period, @monument], html: { autocomplete: 'off' } do |f| %>
     <%= f.input :name, label: "Nom" %>
     <%= f.input :address, label: "Adresse",
   input_html: {data: {address_autocomplete_target: "address"}, class: "d-none"},
