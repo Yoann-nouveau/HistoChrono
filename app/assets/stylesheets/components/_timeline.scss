@@ -143,6 +143,10 @@
     color: #fff;
     text-decoration: none;
 }
+
+.main-timeline .year:hover{
+  background: #9DB2BF;
+}
 .main-timeline .title{
     font-size: 12px;
     font-weight: bold;
@@ -345,4 +349,5 @@
     .main-timeline .description{
         text-align: center;
     }
+
 }
