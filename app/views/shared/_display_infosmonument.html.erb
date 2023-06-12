@@ -2,7 +2,6 @@
   <div class="offcanvas offcanvas-start" tabindex="-1" id="infosmonument<%= monument.id%>" aria-labelledby="infosmonumentLabel">
     <div class="offcanvas-header">
     <h5 class="offcanvas-title" id="infosmonumentLabel"><strong><%= monument.name %></strong></h5>
-
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <% if monument.photo.attached? %>
@@ -13,7 +12,7 @@
     <div class="offcanvas-body">
       <div>
         <p><%= monument.description %><p>
-        <p><%= link_to "<i class='fa-brands fa-wikipedia-w'></i>".html_safe, monument.wikipedia_url %> <%= link_to "<i class='fa-solid fa-earth-americas' style='color: #0d6efd;'></i>".html_safe, monument.google_earth_url %></p>
+        <p><%= link_to "<i class='fa-brands fa-wikipedia-w'></i>".html_safe, monument.wikipedia_url %> <%= link_to "<i class='fa-solid fa-earth-americas'></i>".html_safe, monument.google_earth_url %></p>
         <p><em><small>Marqueur ajouté par <strong><%= monument.user.nickname %></strong> le <%= monument.created_at.strftime('%d/%m/%Y') %></small></p></em>
       </div>
     </div>
