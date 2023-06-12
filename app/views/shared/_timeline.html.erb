@@ -1,4 +1,4 @@
-<div class="main-timeline" data-controller='scroll'>
+<div class="main-timeline" data-controller="scroll">
 
   <% Period.all.order(:start_date).each do |period| %>
     <div class="timeline">
@@ -9,8 +9,8 @@
             </span>
           </div>
 
-        <div class="content" data-scroll-target="scroll-target" data-action="scroll#connect">
-            <%= link_to period.name, period_path(period, :anchor => "#{period.id}"), class:"year" %>
+        <div class="content">
+            <%= link_to period.name, period_path(period,  anchor: "#{period.id}"), id: "#{period.id}", class:"year" %>
             <h3 class="title h4"><%=period.start_date.strftime('%Y')%>-<%=period.end_date.strftime('%Y')%></h3>
         </div>
       </div>
