@@ -76,6 +76,11 @@
     margin-right: 12px;
     position: relative;
 }
+
+.main-timeline .active{
+  border: 8px solid #27374D;
+}
+
 .main-timeline .circle:before{
     content: "";
     width: 13px;
