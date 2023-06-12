@@ -1,6 +1,7 @@
 <div class="container">
   <%= render "shared/display_infosevent" %>
   <%= render "shared/display_infosmonument" %>
+
   <div class="row" id="personalities-row">
     <div class="cards col-sm-6">
       <% @personalities.each do |personality|  %>
@@ -27,17 +28,21 @@
       </div>
     </div>
 
-    <div class="box-map col-sm-8">
-      <div style="width: 100%; height: 600px;"
-        data-controller="map"
+    <div class="box-map col-sm-8" data-controller="map"
         data-map-markers-value="<%= @markers.to_json %>"
         data-map-polygon-value="<%= @polygon.to_json%>"
         data-map-markersevent-value="<%= @markersevent.to_json %>"
         data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-      </div>
+      <div id='map' style="width: 100%; height: 600px;" data-map-target="displaymap"></div>
       <% if user_signed_in? %>
         <%= render "shared/button_add" %>
       <% end %>
+      <div>
+        <input data-map-target="checkboxevent" data-action="change->map#filterevent" type="checkbox" data-toggle="toggle" checked>
+        <p>event</p>
+        <input data-map-target="checkboxmonument" data-action="change->map#filtermonument" type="checkbox" data-toggle="toggle" checked>
+        <p>monument</p>
+      </div>
     </div>
   </div>
 </div>
