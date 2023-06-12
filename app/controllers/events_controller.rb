@@ -31,7 +31,8 @@ class EventsController < ApplicationController
       :address,
       :description,
       :wikipedia_url,
-      :youtube_url
+      :youtube_url,
+      :photo
     )
   end
 end
