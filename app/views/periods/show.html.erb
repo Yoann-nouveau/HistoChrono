@@ -7,9 +7,9 @@
         <div class="card-trip">
           <a class="avatar" href="<%= personality.wikipedia_url %>" target="_blank">
           <% if personality.photo.attached? %>
-            <%= image_tag personality.photo, class: "avatar", alt: personality.fullname, title: personality.fullname %>
+            <%= image_tag personality.photo, class: "avatar", alt: personality.description, title: personality.description %>
           <% else %>
-            <%= image_tag "utilisateur.png", class: "avatar", alt: personality.fullname, title: personality.fullname %>
+            <%= image_tag "utilisateur.png", class: "avatar", alt: personality.description, title: personality.description %>
           <% end %>
           </a>
         </div>

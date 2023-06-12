@@ -1,4 +1,4 @@
-<%= simple_form_for [@period, @personality] do |f| %>
+<%= simple_form_for [@period, @personality], html: { autocomplete: 'off' } do |f| %>
   <%= f.input :fullname, label: "Nom" %>
   <div class="row">
     <%= f.label "Né(e) le" %>
