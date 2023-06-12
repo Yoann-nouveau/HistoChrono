@@ -1,17 +1,17 @@
 class PersonalitiesController < ApplicationController
 
   def new
-    @personalities = Personality.new
+    @personality = Personality.new
     @period = Period.find(params[:period_id])
   end
 
   def create
     @period = Period.find(params[:period_id])
-    @personalities = Personality.new(personalities_params)
-    @personalities.user = current_user
-    @personalities.period = @period
-    if @personalities.save
-      redirect_to periods_path
+    @personality = Personality.new(personalities_params)
+    @personality.user = current_user
+    @personality.period = @period
+    if @personality.save
+      redirect_to periods_path(@period)
     else
       render :new, status: :unprocessable_entity
     end
@@ -22,10 +22,16 @@ class PersonalitiesController < ApplicationController
   def personalities_params
     params.require(:personality).permit(
       :fullname,
-      :birthdate,
+      :birth_day,
+      :birth_month,
+      :birth_year,
+      :death_day,
+      :death_month,
+      :death_year,
       :deathdate,
       :description,
-      :wikipedia_url
+      :wikipedia_url,
+      :photo
     )
   end
 end

@@ -5,7 +5,11 @@
       <% @personalities.each do |personality|  %>
         <div class="card-trip">
           <a class="avatar" href="<%= personality.wikipedia_url %>" target="_blank">
-            <%= image_tag "https://i.pinimg.com/280x280_RS/78/8f/03/788f0311f79553a27796ca41a91df633.jpg", class: "avatar", alt: personality.fullname, title: personality.fullname %>
+          <% if personality.photo.attached? %>
+            <%= image_tag personality.photo, class: "avatar", alt: personality.fullname, title: personality.fullname %>
+          <% else %>
+            <%= image_tag "utilisateur.png", class: "avatar", alt: personality.fullname, title: personality.fullname %>
+          <% end %>
           </a>
         </div>
       <% end %>
