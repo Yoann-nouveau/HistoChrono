@@ -1,5 +1,5 @@
 class PeriodsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index, :show, :redirection]
 
   def index
   end
@@ -21,14 +21,14 @@ class PeriodsController < ApplicationController
       {
         lat: monument.latitude,
         lng: monument.longitude,
-        marker_html: render_to_string(partial: "monument_marker")
+        marker_html: render_to_string(partial: "monument_marker", locals: { monument: monument })
       }
     end
     @markersevent = @period.events.geocoded.map do |event|
       {
         lat: event.latitude,
         lng: event.longitude,
-        marker_html: render_to_string(partial: "event_marker")
+        marker_html: render_to_string(partial: "event_marker", locals: { event: event })
       }
     end
     @personalities = Personality.where(period: @period)
@@ -36,6 +36,5 @@ class PeriodsController < ApplicationController
     @event = Event.new
     @monument = Monument.new
     @personality = Personality.new
-    @period = Period.find(params[:id])
   end
 end

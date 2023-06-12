@@ -1,0 +1,17 @@
+<% @period.monuments.each do |monument| %>
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="infosmonument<%= monument.id%>" aria-labelledby="infosmonumentLabel">
+    <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="infosmonumentLabel"><strong><%= monument.name %></strong></h5>
+
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <img src="https://www.francebleu.fr/s3/cruiser-production/2018/06/4464e217-892f-4b79-8bea-099e2c146667/1200x680_gettyimages-526742236.jpg" alt="" class="img-form">
+    <div class="offcanvas-body">
+      <div>
+        <p><%= monument.description %><p>
+        <p><%= link_to "<i class='fa-brands fa-wikipedia-w'></i>".html_safe, monument.wikipedia_url %> <%= link_to "<i class='fa-solid fa-earth-americas' style='color: #0d6efd;'></i>".html_safe, monument.google_earth_url %></p>
+        <p><em><small>Marqueur ajouté par <strong><%= monument.user.nickname %></strong> le <%= monument.created_at.strftime('%d/%m/%Y') %></small></p></em>
+      </div>
+    </div>
+  </div>
+<% end %>

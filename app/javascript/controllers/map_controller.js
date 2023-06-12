@@ -17,6 +17,7 @@ export default class extends Controller {
       minZoom: 4,
       style: "mapbox://styles/alexmcfly/clikchnpc00en01qvd5kjhaz3"
     })
+    this.map.addControl(new mapboxgl.FullscreenControl());
     this.map.addControl(new mapboxgl.NavigationControl());
     this.#addPolygonToMap()
     this.#addMarkersToMap()
