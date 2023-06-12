@@ -15,14 +15,14 @@
         <% @start_date = "#{event.start_day}-#{event.start_month}-#{event.start_year}" %>
         <% @end_date = "#{event.end_day}-#{event.end_month}-#{event.end_year}" %>
         <% if @start_date == @end_date %>
-          <p><i>Date : <%= @start_date %></i></p>
+          <p><i id="date_event">Date : <%= @start_date %></i></p>
         <% else %>
-          <p><i>Date : du <%= @start_date %> au <%= @end_date %></i></p>
+          <p><i id="date_event">Date : du <%= @start_date %> au <%= @end_date %></i></p>
         <% end %>
 
         <p><%= event.description %><p>
         <p><%= link_to "<i class='fa-brands fa-wikipedia-w'></i>".html_safe, event.wikipedia_url %> <%= link_to "<i class='fa-brands fa-youtube'></i>".html_safe, event.youtube_url %></p>
-        <p><em><small>Marqueur ajouté par <strong><%= event.user.nickname %></strong> le <%= event.created_at.strftime('%d/%m/%Y') %></small></p></em>
+        <p id="added_by"><em><small>Marqueur ajouté par <strong><%= event.user.nickname %></strong> le <%= event.created_at.strftime('%d/%m/%Y') %></small></p></em>
       </div>
     </div>
   </div>

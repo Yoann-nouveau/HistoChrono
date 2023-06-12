@@ -6,6 +6,8 @@
     width: 100%;
     clear: both;
 }
+
+
 .main-timeline:before{
     content: "";
     width: 3px;
@@ -139,9 +141,10 @@
     margin: 5px 0 7px 0;
     background: #526D82;
     border-radius: 7px;
-    font-size: 12px;
+    font-size: 15px;
     color: #fff;
     text-decoration: none;
+    font-family: 'Mate SC', serif;;
 }
 .main-timeline .title{
     font-size: 12px;
