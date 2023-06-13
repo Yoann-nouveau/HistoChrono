@@ -1,21 +1,20 @@
 <div class="container">
   <%= render "shared/display_infosevent" %>
   <%= render "shared/display_infosmonument" %>
+  <%= render "shared/display_infospersonality" %>
 
   <div class="row" id="personalities-row">
     <div class="cards col-sm-6">
       <% @personalities.each do |personality|  %>
-        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasPerso" aria-controls="offcanvasPerso">
         <div class="card-trip">
-          <a class="avatar" href="<%= personality.wikipedia_url %>" target="_blank">
-          <% if personality.photo.attached? %>
-            <%= image_tag personality.photo, class: "avatar", alt: personality.description, title: personality.description %>
-          <% else %>
-            <%= image_tag "utilisateur.png", class: "avatar", alt: personality.description, title: personality.description %>
-          <% end %>
+          <a data-bs-toggle="offcanvas" href="#infospersonality<%= personality.id%>" role="button" aria-controls="offcanvasExample">
+            <% if personality.photo.attached? %>
+              <%= image_tag personality.photo, class: "avatar", alt: personality.fullname, title: personality.fullname %>
+            <% else %>
+              <%= image_tag "no-perso.jpg", class: "avatar", alt: personality.fullname, title: personality.fullname %>
+            <% end %>
           </a>
         </div>
-        </button>
       <% end %>
     </div>
 
