@@ -6,7 +6,7 @@ class PersonalitiesController < ApplicationController
     @personality.user = current_user
     @personality.period = @period
     if @personality.save
-      redirect_to periods_path(@period)
+      redirect_to period_path(@period)
     else
       render :new, status: :unprocessable_entity
     end
