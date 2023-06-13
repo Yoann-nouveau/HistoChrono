@@ -1,0 +1,15 @@
+<div class="card-approvals">
+  <% if data.photo.attached? %>
+    <%= image_tag data.photo, class:"photo-marker" %>
+    <% else %>
+      <%= image_tag "no-event.jpg", class:"photo-marker" %>
+  <% end %>
+  <div class="card-approvals-infos">
+    <h2><%= data.try(:name) || data.try(:fullname) %></h2>
+    <p><%= data.description %></p>
+    <p><strong><%= data.try(:address) || data.try("")%></strong></p>
+  </div>
+  <div class="card-approvals-votes">
+    <h3><%= data.progress %></h3>
+  </div>
+</div>

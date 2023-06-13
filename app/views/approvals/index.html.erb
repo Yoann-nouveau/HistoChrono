@@ -1,29 +1,15 @@
 
 <div class="container">
 
-  <% @monuments.each do |monument| %>
-    <div class="card-approvals">
-      <% if monument.photo.attached? %>
-        <%= image_tag monument.photo, class:"photo-marker" %>
-        <% else %>
-        <img src="https://www.francebleu.fr/s3/cruiser-production/2018/06/4464e217-892f-4b79-8bea-099e2c146667/1200x680_gettyimages-526742236.jpg" alt="" class="photo-marker">
-      <% end %>
-      <div class="card-approvals-infos">
-        <h2><%= monument.name %></h2>
-        <p><%= monument.description %></p>
-        <p><strong><%= monument.address%></strong></p>
-      </div>
-      <div class="card-approvals-votes">
-      
-      </div>
-    </div>
+  <% @monuments.each do |data| %>
+    <%= render "shared/card_approval", data: data %>
   <% end %>
 
-  <% @events.each do |event| %>
-  <p><%= event.name %></p>
+  <% @events.each do |data| %>
+    <%= render "shared/card_approval", data: data %>
   <% end %>
 
-  <% @personalities.each do |personalitie| %>
-  <p><%= personalitie.fullname %></p>
+  <% @personalities.each do |data| %>
+    <%= render "shared/card_approval", data: data %>
   <% end %>
 </div>
