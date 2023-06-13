@@ -2,14 +2,29 @@
 <div class="container">
 
   <% @monuments.each do |data| %>
-    <%= render "shared/card_approval", data: data %>
-  <% end %>
+  <div class="card-center">
+    <div class="card-approvals">
+      <i class="fa-solid fa-landmark card-font" style="color: #040101;"></i>
+      <%= render "shared/card_approval", data: data %>
+    </div>
+  </div>
+  <% end %> 
 
   <% @events.each do |data| %>
-    <%= render "shared/card_approval", data: data %>
+    <div class="card-center">
+      <div class="card-approvals">
+        <i class="fa-solid fa-circle-info card-font" style="color: #040101;"></i>
+        <%= render "shared/card_approval", data: data %>
+      </div>
+    </div>
   <% end %>
 
   <% @personalities.each do |data| %>
-    <%= render "shared/card_approval", data: data %>
+    <div class="card-center">
+      <div class="card-approvals">
+        <i class="fa-solid fa-circle-user card-font" style="color: #040101;"></i>
+        <%= render "shared/card_approval", data: data %>
+      </div>
+    </div>
   <% end %>
 </div>
