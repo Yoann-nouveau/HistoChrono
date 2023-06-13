@@ -5,6 +5,7 @@
   <div class="row" id="personalities-row">
     <div class="cards col-sm-6">
       <% @personalities.each do |personality|  %>
+        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasPerso" aria-controls="offcanvasPerso">
         <div class="card-trip">
           <a class="avatar" href="<%= personality.wikipedia_url %>" target="_blank">
           <% if personality.photo.attached? %>
@@ -14,6 +15,7 @@
           <% end %>
           </a>
         </div>
+        </button>
       <% end %>
     </div>
 
