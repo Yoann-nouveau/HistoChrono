@@ -2,6 +2,8 @@ class Monument < ApplicationRecord
   belongs_to :period
   belongs_to :user
 
+  has_many :approvals, as: :voteable
+
   has_one_attached :photo
 
   geocoded_by :address

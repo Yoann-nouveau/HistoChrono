@@ -2,6 +2,8 @@ class Personality < ApplicationRecord
   belongs_to :period
   belongs_to :user
 
+  has_many :approvals, as: :voteable
+
   has_one_attached :photo
 
   validates :fullname, presence: true
