@@ -1,0 +1,64 @@
+.card-approvals {
+  height: 150px;
+  width: 75%;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  margin: 20px;
+  position: relative;
+}
+
+
+.card-approvals img {
+  height: 75%;
+  width: 30%;
+  object-fit: cover;
+}
+
+.card-approvals h2 {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.card-approvals p {
+  font-size: 13px;
+  line-height: 1.4;
+  opacity: .7;
+}
+
+.card-approvals .card-approvals-infos {
+  height: 150px;
+  width: 100%;
+  padding: 10px;
+  margin: 15px;
+  overflow-y: scroll;
+}
+
+.card-approvals-infos::-webkit-scrollbar {
+  display: none;
+}
+
+.card-approvals .card-approvals-votes {
+  padding: 10px;
+  margin: 15px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+    .fa-solid {
+      color: black;
+    }
+}
+
+.card-center {
+  display: flex;
+  justify-content: center;
+}
+
+.card-font {
+  position: absolute;
+  color: #040101;
+  top: -22px;
+  left: -22px;
+  font-size: 30px;
+}

@@ -1,14 +1,30 @@
-<h1>Approvals#index</h1>
-<p>Find me in app/views/approvals/index.html.erb</p>
 
-<% @monuments.each do |monument| %>
-<p><%= monument.name %></p>
-<% end %>
+<div class="container">
 
-<% @events.each do |event| %>
-<p><%= event.name %></p>
-<% end %>
+  <% @monuments.each do |data| %>
+  <div class="card-center">
+    <div class="card-approvals">
+      <i class="fa-solid fa-landmark card-font" style="color: #040101;"></i>
+      <%= render "shared/card_approval", data: data %>
+    </div>
+  </div>
+  <% end %> 
 
-<% @personalities.each do |personalitie| %>
-<p><%= personalitie.fullname %></p>
-<% end %>
+  <% @events.each do |data| %>
+    <div class="card-center">
+      <div class="card-approvals">
+        <i class="fa-solid fa-circle-info card-font" style="color: #040101;"></i>
+        <%= render "shared/card_approval", data: data %>
+      </div>
+    </div>
+  <% end %>
+
+  <% @personalities.each do |data| %>
+    <div class="card-center">
+      <div class="card-approvals">
+        <i class="fa-solid fa-circle-user card-font" style="color: #040101;"></i>
+        <%= render "shared/card_approval", data: data %>
+      </div>
+    </div>
+  <% end %>
+</div>
