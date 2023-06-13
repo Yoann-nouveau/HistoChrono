@@ -11,7 +11,7 @@
     <% end %>
     <div class="offcanvas-body">
       <div>
-        <p id="description-monument"><%= monument.description %><p>
+        <p id="description"><%= monument.description %><p>
         <p><%= link_to "<i class='fa-brands fa-wikipedia-w'></i>".html_safe, monument.wikipedia_url %> <%= link_to "<i class='fa-solid fa-earth-americas'></i>".html_safe, monument.google_earth_url %></p>
         <p id="added_by"><em><small>Marqueur ajouté par <strong><%= monument.user.nickname %></strong> le <%= monument.created_at.strftime('%d/%m/%Y') %></small></p></em>
       </div>

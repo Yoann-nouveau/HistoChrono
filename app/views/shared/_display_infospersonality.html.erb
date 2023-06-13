@@ -11,9 +11,16 @@
     <% end %>
     <div class="offcanvas-body">
       <div>
-        <p><%= personality.description %><p>
+        <% @birth_date = "#{personality.birth_day}-#{personality.birth_month}-#{personality.birth_year}" %>
+        <% @death_date = "#{personality.death_day}-#{personality.death_month}-#{personality.death_year}" %>
+        <% if @start_date == @end_date %>
+          <p><i id="date_personality">Né(e) le : <%= @birth_date %></i></p>
+        <% else %>
+          <p><i id="date_personality">Né(e) le : <%= @start_date %>, Mort(e) le : <%= @end_date %></i></p>
+        <% end %>
+        <p id="description"><%= personality.description %><p>
         <p><%= link_to "<i class='fa-brands fa-wikipedia-w'></i>".html_safe, personality.wikipedia_url, target: "_blank" %></p>
-        <p><em><small>Personnage ajouté par <strong><%= personality.user.nickname %></strong> le <%= personality.created_at.strftime('%d/%m/%Y') %></small></p></em>
+        <p id="added_by"><em><small>Personnage ajouté par <strong><%= personality.user.nickname %></strong> le <%= personality.created_at.strftime('%d/%m/%Y') %></small></p></em>
       </div>
     </div>
   </div>
