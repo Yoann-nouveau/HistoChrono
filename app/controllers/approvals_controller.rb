@@ -1,8 +1,8 @@
 class ApprovalsController < ApplicationController
   def index
-    @monuments = Monument.where("progress < ?", 10)
-    @events = Event.where("progress < ?", 10)
-    @personalities = Personality.where("progress < ?", 10)
+    @monuments = Monument.where("progress < ?", 10).order("created_at DESC")
+    @events = Event.where("progress < ?", 10).order("created_at DESC")
+    @personalities = Personality.where("progress < ?", 10).order("created_at DESC")
   end
 
   def create
@@ -18,9 +18,15 @@ class ApprovalsController < ApplicationController
     @approval.user = current_user
     @approval.voteable = marker
     if @approval.save
-      marker.progress += 1
-      marker.save
-      redirect_to approvals_path, notice: "You just vote for this marker !"
+      if params[:vote_type] == "up"
+        marker.progress += 1
+        marker.save
+        redirect_to approvals_path, notice: "You just vote for this marker !"
+      elsif params[:vote_type] == "down"
+        marker.progress -= 1
+        marker.save
+        redirect_to approvals_path, notice: "You just downvote for this marker !"
+      end
     else
       render :index
     end
