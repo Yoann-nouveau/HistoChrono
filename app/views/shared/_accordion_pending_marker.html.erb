@@ -1,0 +1,17 @@
+
+<div class="accordion-item">
+  <h2 class="accordion-header">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-pending-collapse<%=marker_type.capitalize%>" aria-expanded="false" aria-controls="flush-pending-collapse<%=marker_type.capitalize%>">
+      <%= title %>
+    </button>
+  </h2>
+  <div id="flush-pending-collapse<%=marker_type.capitalize%>" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+    <div class="accordion-body">
+      <ul>
+        <% markers.each do |marker| %>
+          <li><%= link_to marker.name, period_path(marker.period_id) %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
