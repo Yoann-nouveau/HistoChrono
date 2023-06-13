@@ -1,8 +1,8 @@
 <div class="container mt-5 mb-5">
-  <div class="accordion" id="accordionExample">
-    <%# render "shared/accordion_marker", markers: @markers %>
-    <%= render "shared/accordion_monument" %>
-    <%= render "shared/accordion_event" %>
-    <%= render "shared/accordion_personality" %>
+  <div class="accordion accordion-flush" id="accordionFlushExample">
+    <%= render "shared/accordion_marker", markers: @monuments, marker_type: "monument", title: "Mes monuments" %>
+    <%= render "shared/accordion_marker", markers: @events, marker_type: "event", title: "Mes évènements" %>
+    <%= render "shared/accordion_marker", markers: @personalities, marker_type: "personality", title: "Mes personnages" %>
+    <%# render "shared/accordion_marker", markers: @pending , marker_type: "pending", title: "Mes marqueurs en cours de vote" %>
   </div>
 </div>
