@@ -50,7 +50,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_13_084229) do
     t.string "voteable_type", null: false
     t.bigint "voteable_id", null: false
     t.index ["user_id"], name: "index_approvals_on_user_id"
-    t.index ["voteable_type", "voteable_id"], name: "index_votes_on_voteable"
+    t.index ["voteable_type", "voteable_id"], name: "index_approvals_on_voteable"
   end
 
   create_table "events", force: :cascade do |t|
