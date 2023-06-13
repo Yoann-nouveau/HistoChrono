@@ -20,7 +20,7 @@
           <p><i id="date_event">Date : du <%= @start_date %> au <%= @end_date %></i></p>
         <% end %>
 
-        <p><%= event.description %><p>
+        <p id="description"><%= event.description %><p>
         <p><%= link_to "<i class='fa-brands fa-wikipedia-w'></i>".html_safe, event.wikipedia_url %> <%= link_to "<i class='fa-brands fa-youtube'></i>".html_safe, event.youtube_url %></p>
         <p id="added_by"><em><small>Marqueur ajouté par <strong><%= event.user.nickname %></strong> le <%= event.created_at.strftime('%d/%m/%Y') %></small></p></em>
       </div>
