@@ -1,10 +1,5 @@
 class MonumentsController < ApplicationController
 
-  def new
-    @monument = Monument.new
-    @period = Period.find(params[:period_id])
-  end
-
   def create
     @monument = Monument.new(monument_params)
     @period = Period.find(params[:period_id])

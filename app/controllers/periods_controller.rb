@@ -17,21 +17,21 @@ class PeriodsController < ApplicationController
 
   def show
     @period = Period.find(params[:id])
-    @markers = @period.monuments.geocoded.map do |monument|
+    @markers = @period.monuments.where("progress > ?", 10).geocoded.map do |monument|
       {
         lat: monument.latitude,
         lng: monument.longitude,
         marker_html: render_to_string(partial: "monument_marker", locals: { monument: monument })
       }
     end
-    @markersevent = @period.events.geocoded.map do |event|
+    @markersevent = @period.events.where("progress > ?", 10).geocoded.map do |event|
       {
         lat: event.latitude,
         lng: event.longitude,
         marker_html: render_to_string(partial: "event_marker", locals: { event: event })
       }
     end
-    @personalities = Personality.where(period: @period)
+    @personalities = Personality.where(period: @period )
     @polygon = @period.polygons
     @event = Event.new
     @monument = Monument.new

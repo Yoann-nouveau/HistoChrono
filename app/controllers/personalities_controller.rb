@@ -1,10 +1,5 @@
 class PersonalitiesController < ApplicationController
 
-  def new
-    @personality = Personality.new
-    @period = Period.find(params[:period_id])
-  end
-
   def create
     @period = Period.find(params[:period_id])
     @personality = Personality.new(personalities_params)
