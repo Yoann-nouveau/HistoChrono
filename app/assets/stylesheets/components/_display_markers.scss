@@ -32,8 +32,12 @@
     font-family: 'Mate SC', serif;
   }
 
-  #description-monument {
+  #description{
     font-family: Besley;
+  }
+
+  #date_personality{
+    font-family: 'Mate SC', serif;
   }
 }
 
@@ -41,6 +45,19 @@
   .offcanvas-header{
   padding: 10px;
   background-color: #8B635C;
+  color: white;
+  box-shadow: 0px 3px 1px grey;
+  }
+
+  .fa-brands {
+    color: #8B635C;
+  }
+ }
+
+ .infos-personality{
+  .offcanvas-header{
+  padding: 10px;
+  background-color: #faa307;
   color: white;
   box-shadow: 0px 3px 1px grey;
   }
