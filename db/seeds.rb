@@ -5,6 +5,8 @@
 #
 #   movies = Movie.create([ name: "Star Wars" },  name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+require "open-uri"
+
 Period.destroy_all
 User.destroy_all
 
@@ -106,13 +108,17 @@ maintenant = Period.create!(
 )
 
 puts "périodes validées"
+file = URI.open('https://res.cloudinary.com/dsxh5jciu/image/upload/v1686751163/Basil_II_29_eoo4io.webp')
 
-basile = User.create!(
+basile = User.new(
   email: "basile@mail.com",
   password: "azerty",
   fullname: "Basile de Beaulieu",
   nickname: "Bazi",
 )
+
+basile.photo.attach(io: file, filename: "basile", content_type: "image/png")
+basile.save
 puts "users validés"
 
 Monument.create!(
