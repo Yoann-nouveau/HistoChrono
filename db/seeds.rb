@@ -111,7 +111,7 @@ basile = User.create!(
   email: "basile@mail.com",
   password: "azerty",
   fullname: "Basile de Beaulieu",
-  nickname: "Bazi"
+  nickname: "Bazi",
 )
 puts "users validés"
 
