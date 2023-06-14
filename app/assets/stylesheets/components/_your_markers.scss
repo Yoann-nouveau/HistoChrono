@@ -2,9 +2,36 @@
   background-color: #27374D;
   color: white;
   opacity: 0.9;
+  font-family: 'Mate SC', serif;
 }
 
 #your-markers{
   display: flex;
   justify-content: space-around;
+  font-family: 'Mate SC', serif;
+
+  a {
+    text-decoration: none;
+    color: #27374D;
+  }
+
+  #text-no-vote {
+    font-size: 12px;
+  }
+
+  h1 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .accordion-flush .accordion-item .accordion-button, .accordion-flush .accordion-item .accordion-button.collapsed {
+    border-radius: 5px;
+  }
+
+  #marker-period {
+    font-size: 12px;
+    opacity: 0.5;
+    margin: 2px
+  }
+
 }
