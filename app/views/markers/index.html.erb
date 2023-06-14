@@ -11,9 +11,9 @@
     <div class="col">
     <p>Vos marqueurs en cours de validation</p>
       <div class="accordion accordion-flush" id="accordionFlushExample">
-        <%= render "shared/accordion_marker", markers: @pending_monuments, marker_type: "pending_monument", title: "Mes monuments en cours (#{@pending_monuments.size})" %>
-        <%= render "shared/accordion_marker", markers: @pending_events, marker_type: "pedning_event", title: "Mes évènements en cours (#{@pending_events.size})" %>
-        <%= render "shared/accordion_marker", markers: @pending_personalities, marker_type: "pending_personality", title: "Mes personnages en cours (#{@pending_personalities.size})" %>
+        <%= render "shared/accordion_pending_marker", markers: @pending_monuments, marker_type: "pending_monument", title: "Mes monuments en cours (#{@pending_monuments.size})" %>
+        <%= render "shared/accordion_pending_marker", markers: @pending_events, marker_type: "pedning_event", title: "Mes évènements en cours (#{@pending_events.size})" %>
+        <%= render "shared/accordion_pending_marker", markers: @pending_personalities, marker_type: "pending_personality", title: "Mes personnages en cours (#{@pending_personalities.size})" %>
       </div>
     </div>
   </div>
