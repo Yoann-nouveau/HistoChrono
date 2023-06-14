@@ -1,23 +1,23 @@
 
 
-<% if data.photo.attached? %>
-  <%= image_tag data.photo, class:"photo-marker" %>
-  <% else %>
-    <%= image_tag "no-event.jpg", class:"photo-marker" %>
-<% end %>
-
-<div class="card-approvals-infos">
-  <h2><%= data.try(:name) || data.try(:fullname) %></h2>
-  <p><%= data.description %></p>
-  <p><strong><%= data.try(:address) || data.try("")%></strong></p>
-</div>
-
-<div class="card-approvals-votes">
-  <%= link_to approvals_path("#{data.class.to_s.downcase}_id".to_sym => data.id, vote_type: "up"), data: { turbo_method: :post } do %>
-    <i class='fa-solid fa-chevron-up'></i>
+  <% if data.photo.attached? %>
+    <%= image_tag data.photo, class:"photo-marker" %>
+    <% else %>
+      <%= image_tag "no-event.jpg", class:"photo-marker" %>
   <% end %>
-  <h3><%= data.progress %></h3>
-  <%= link_to approvals_path("#{data.class.to_s.downcase}_id".to_sym => data.id, vote_type: "down"), data: { turbo_method: :post } do %>
-    <i class='fa-solid fa-chevron-down'></i>
-  <% end %>
-</div>
+
+  <div class="card-approvals-infos">
+    <h2><%= data.try(:name) || data.try(:fullname) %></h2>
+    <p><%= data.description %></p>
+    <p><strong><%= data.try(:address) || data.try("")%></strong></p>
+  </div>
+
+  <div class="card-approvals-votes">
+    <%= link_to approvals_path("#{data.class.to_s.downcase}_id".to_sym => data.id, vote_type: "up"), data: { turbo_method: :post } do %>
+      <i class='fa-solid fa-chevron-up'></i>
+    <% end %>
+    <h3><%= data.progress %></h3>
+    <%= link_to approvals_path("#{data.class.to_s.downcase}_id".to_sym => data.id, vote_type: "down"), data: { turbo_method: :post } do %>
+      <i class='fa-solid fa-chevron-down'></i>
+    <% end %>
+  </div>

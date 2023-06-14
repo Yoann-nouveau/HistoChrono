@@ -37,8 +37,8 @@ class ApprovalsController < ApplicationController
   private
 
   def get_all_markers
-    @monuments = Monument.to_approve.order_by_creation
-    @events = Event.to_approve.order_by_creation
+    @monuments = Monument.to_approve.order_by_creation.not_approved_by(current_user)
+    @events = Event.to_approve.order_by_creation.not_approved_by(current_user)
     @personalities = Personality.to_approve.order_by_creation.not_approved_by(current_user)
   end
 end
