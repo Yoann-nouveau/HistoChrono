@@ -18,7 +18,6 @@
     <%= render "shared/flashes" %>
     <%= render "shared/navbar" %>
 
-    <div class="shape">
 
       <% if params[:action] != "home" %>
         <%= yield %>
@@ -27,7 +26,6 @@
         <%= yield %>
       <% end %>
 
-    </div>
 
   </body>
 </html>
