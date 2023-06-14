@@ -108,8 +108,8 @@ maintenant = Period.create!(
 )
 
 puts "périodes validées"
-file = URI.open('https://res.cloudinary.com/dsxh5jciu/image/upload/v1686751163/Basil_II_29_eoo4io.webp')
 
+file = URI.open('https://res.cloudinary.com/dsxh5jciu/image/upload/v1686751163/Basil_II_29_eoo4io.webp')
 basile = User.new(
   email: "basile@mail.com",
   password: "azerty",
@@ -119,6 +119,17 @@ basile = User.new(
 
 basile.photo.attach(io: file, filename: "basile", content_type: "image/png")
 basile.save
+
+file = URI.open('https://res.cloudinary.com/dsxh5jciu/image/upload/v1686751780/Abraham_Lincoln_29_lqtddd.webp')
+jean = User.new(
+  email: "jean@mail.com",
+  password: "azerty",
+  fullname: "Jean Mazarin",
+  nickname: "JeanMaz",
+)
+
+jean.photo.attach(io: file, filename: "jean", content_type: "image/png")
+jean.save
 puts "users validés"
 
 Monument.create!(
@@ -136,7 +147,7 @@ Monument.create!(
   juillet 1789.",
   wikipedia_url: "https://fr.wikipedia.org/wiki/Bastille",
   google_earth_url: "https://earth.google.com/web/search/la+bastille+paris/@48.85324435,2.36939165,37.65972245a,319.63561261d,35y,0h,45t,0r/data=CnwaUhJMCiUweDQ3ZTY3MjAxYWNhOTkyMjk6MHgyMzFlYjBjOTY3ZTVlYjEwGZ0lbU81bUhAIdwMN-Dz8wJAKhFsYSBiYXN0aWxsZSBwYXJpcxgCIAEiJgokCaK61faIvTNAEaK61faIvTPAGfjCsggcUkFAISzUwZX7lVDAKAI",
-  progress: 12,
+  progress: 9,
   latitude: 48.5112,
   longitude: 2.2209,
   period_id: french_revolution.id,
@@ -160,7 +171,7 @@ Personality.create!(
   Français du 18 mai 1804 au 6 avril 1814 et du 20 mars au
   22 juin 1815, sous le nom de Napoléon Ier.",
   wikipedia_url: "https://fr.wikipedia.org/wiki/Napol%C3%A9on_Ier",
-  period_id: french_revolution.id,
+  period_id: premier_empire.id,
   progress: 12,
   user_id: basile.id
 )
@@ -177,20 +188,20 @@ Personality.create!(
   description: "Charles de Gaulle, communément appelé le général de Gaulle ou parfois simplement le Général, né le 22 novembre 1890 à Lille (Nord) et mort le 9 novembre 1970 à Colombey-les-Deux-Églises (Haute-Marne), est un militaire, résistant, homme d'État et écrivain français.",
   wikipedia_url: "https://fr.wikipedia.org/wiki/Charles_de_Gaulle",
   period_id: occupation.id,
-  progress: 0,
-  user_id: basile.id
+  progress: 5,
+  user_id: jean.id
 )
 puts "De Gaulle créé"
 
 Personality.create!(
-  fullname: "Jonathan Serafini",
-  birth_year: 1984,
-  death_year: nil,
-  description: "CEO & Développeur web fullstack chez MIHIVAI",
-  wikipedia_url: "https://www.linkedin.com/in/jonathan-serafini-01a568119/?originalSubdomain=fr",
+  fullname: "Jacques Chirac",
+  birth_year: 1932,
+  death_year: 2022,
+  description: "Jacques Chirac, né le 29 novembre 1932 dans le 5e arrondissement de Paris et mort le 26 septembre 2019 dans le 6e arrondissement de la même ville, est un haut fonctionnaire et homme d'État français.",
+  wikipedia_url: "https://fr.wikipedia.org/wiki/Jacques_Chirac",
   period_id: maintenant.id,
-  progress: 0,
-  user_id: basile.id
+  progress: -1,
+  user_id: jean.id
 )
 puts "personality validés"
 
@@ -206,7 +217,7 @@ Event.create!(
   description: "La bataille de Hondschoote (ou bataille d'Hondschoote) oppose les troupes de la République française à celles de la Première Coalition le 8 septembre 1793 (22 fructidor de l'an I). Le général Houchard bat le duc d’York et Albany et libère Dunkerque. Cette victoire est capitale pour la France de 1793, elle intervient après plusieurs défaites et aura un impact psychologique positif considérable d'autant plus qu'elle sera suivie peu de temps après par une nouvelle victoire française lors de la bataille de Wattignies.",
   wikipedia_url: "https://fr.wikipedia.org/wiki/Bataille_de_Hondschoote",
   youtube_url: "https://www.youtube.com/results?search_query=Bataille+de+Hondschoote",
-  progress: 0,
+  progress: 7,
   latitude: 58.5849,
   longitude: 2.3510,
   period_id: french_revolution.id,

@@ -112,7 +112,7 @@ export default class extends Controller {
           'layout': {},
           'paint': {
               'fill-color': '#9DB2BF', // blue color fill
-              'fill-opacity': 0.1
+              'fill-opacity': 0.5
           }
       });
       // Add a black outline around the polygon.

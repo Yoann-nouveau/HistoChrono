@@ -12,7 +12,7 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "Retour à la carte", period_path(Period.first.id), class: "nav-link" %>
+            <%= link_to "Cartes", period_path(Period.first.id), class: "nav-link" %>
           </li>
           <li class="nav-item">
             <%= link_to "HistoVotes", approvals_path, class: "nav-link" %>
