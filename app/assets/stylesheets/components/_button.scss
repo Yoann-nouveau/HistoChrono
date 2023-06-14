@@ -39,3 +39,15 @@
   background: linear-gradient(#147EFF, #0F67DA);
   color: white;
 }
+
+.btn-devise {
+  background-color: #526D82;
+  color: white;
+  border-radius: 5px;
+}
+
+.btn-devise:hover {
+  background-color: #4c7ea4;
+  color: white;
+  transition: 0.3s;
+}

@@ -1,19 +1,20 @@
 <div id="your-markers">
   <div class="container mt-5 mb-5 row align-items-start">
-    <div class="col">
+  <h1>Vos marqueurs</h1>
+    <div class="offset-1 col-5">
     <p>Vos marqueurs validés</p>
-      <div class="accordion accordion-flush" id="accordionFlushExample">
+      <div class="accordion accordion-flush" id="accordionFlushMarkerExample">
         <%= render "shared/accordion_marker", markers: @monuments, marker_type: "monument", title: "Mes monuments (#{@monuments.size})" %>
         <%= render "shared/accordion_marker", markers: @events, marker_type: "event", title: "Mes évènements (#{@events.size})" %>
         <%= render "shared/accordion_marker", markers: @personalities, marker_type: "personality", title: "Mes personnages (#{@personalities.size})" %>
       </div>
     </div>
-    <div class="col">
+    <div class="col-5">
     <p>Vos marqueurs en cours de validation</p>
-      <div class="accordion accordion-flush" id="accordionFlushExample">
-        <%= render "shared/accordion_marker", markers: @pending_monuments, marker_type: "pending_monument", title: "Mes monuments en cours (#{@pending_monuments.size})" %>
-        <%= render "shared/accordion_marker", markers: @pending_events, marker_type: "pedning_event", title: "Mes évènements en cours (#{@pending_events.size})" %>
-        <%= render "shared/accordion_marker", markers: @pending_personalities, marker_type: "pending_personality", title: "Mes personnages en cours (#{@pending_personalities.size})" %>
+      <div class="accordion accordion-flush" id="accordionFlushPendingExample">
+        <%= render "shared/accordion_pending_marker", markers: @pending_monuments, marker_type: "pending_monument", title: "Mes monuments en cours (#{@pending_monuments.size})" %>
+        <%= render "shared/accordion_pending_marker", markers: @pending_events, marker_type: "pedning_event", title: "Mes évènements en cours (#{@pending_events.size})" %>
+        <%= render "shared/accordion_pending_marker", markers: @pending_personalities, marker_type: "pending_personality", title: "Mes personnages en cours (#{@pending_personalities.size})" %>
       </div>
     </div>
   </div>
