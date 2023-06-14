@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_13_095846) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_14_125144) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -57,7 +57,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_13_095846) do
     t.text "description"
     t.string "wikipedia_url"
     t.string "youtube_url"
-    t.integer "progress"
+    t.integer "progress", default: 0
     t.bigint "period_id", null: false
     t.bigint "user_id", null: false
     t.float "latitude"
@@ -81,7 +81,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_13_095846) do
     t.text "description"
     t.string "wikipedia_url"
     t.string "google_earth_url"
-    t.integer "progress"
+    t.integer "progress", default: 0
     t.float "latitude"
     t.float "longitude"
     t.bigint "period_id", null: false
@@ -107,7 +107,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_13_095846) do
     t.text "description"
     t.string "wikipedia_url"
     t.bigint "period_id", null: false
-    t.integer "progress"
+    t.integer "progress", default: 0
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
