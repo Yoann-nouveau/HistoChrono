@@ -1,6 +1,6 @@
 
 <div class="container">
-
+  <% if @monuments.any?{ |data| data.user_id != current_user.id } || @events.any?{ |data| data.user_id != current_user.id } || @personalities.any?{ |data| data.user_id != current_user.id }%>
   <% @monuments.each do |data| %>
     <% if data.user_id != current_user.id %>
       <div class="card-center">
@@ -33,5 +33,7 @@
         </div>
     <% end %>
   <% end %>
-
+  <% else %>
+  <p>test</p>
+  <% end %>
 </div>
