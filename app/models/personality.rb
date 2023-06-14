@@ -6,6 +6,10 @@ class Personality < ApplicationRecord
 
   has_one_attached :photo
 
+  scope :to_approve, -> { where("progress < ?", 10) }
+  scope :order_by_creation, -> { order("created_at DESC") }
+  scope :not_approved_by, ->(user) { where.not(id: user.approvals.where(voteable_type: self.name).pluck(:voteable_id)) }
+
   validates :fullname, presence: true
   validates :description, presence: true
   validates :wikipedia_url, presence: true

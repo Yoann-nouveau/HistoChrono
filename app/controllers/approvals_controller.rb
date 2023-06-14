@@ -1,19 +1,10 @@
 class ApprovalsController < ApplicationController
   def index
-    @monuments = Monument.where("progress < ?", 10).order("created_at DESC")
-    @events = Event.where("progress < ?", 10).order("created_at DESC")
-    @personalities = Personality.where("progress < ?", 10).order("created_at DESC")
+    get_all_markers
   end
 
   def create
-    marker =
-      if params[:monument_id]
-        Monument.find(params[:monument_id])
-      elsif params[:personality_id]
-        Personality.find(params[:personality_id])
-      elsif params[:event_id]
-        Event.find(params[:event_id])
-      end
+    marker = set_marker
     @approval = Approval.new
     @approval.user = current_user
     @approval.voteable = marker
@@ -21,21 +12,33 @@ class ApprovalsController < ApplicationController
       if params[:vote_type] == "up"
         marker.progress += 1
         marker.save
-        redirect_to approvals_path, notice: "You just vote for this marker !"
+        redirect_to approvals_path, notice: "Merci pour votre vote positif !"
       elsif params[:vote_type] == "down"
         marker.progress -= 1
         marker.save
-        redirect_to approvals_path, notice: "You just downvote for this marker !"
+        redirect_to approvals_path, notice: "Merci pour vottre contribution à la communauté !"
       end
     else
+      get_all_markers
       render :index
     end
   end
 
-  def update
+  def set_marker
+    if params[:monument_id]
+      Monument.find(params[:monument_id])
+    elsif params[:personality_id]
+      Personality.find(params[:personality_id])
+    elsif params[:event_id]
+      Event.find(params[:event_id])
+    end
   end
 
-  def downvote
+  private
 
+  def get_all_markers
+    @monuments = Monument.to_approve.order_by_creation
+    @events = Event.to_approve.order_by_creation
+    @personalities = Personality.to_approve.order_by_creation.not_approved_by(current_user)
   end
 end
