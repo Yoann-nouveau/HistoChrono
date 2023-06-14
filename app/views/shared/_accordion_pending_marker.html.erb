@@ -8,7 +8,7 @@
   <div id="flush-pending-collapse<%=marker_type.capitalize%>" class="accordion-collapse collapse" data-bs-parent="#accordionFlushPendingExample">
     <div class="accordion-body">
       <% markers.each do |marker| %>
-        <strong><%= link_to marker.name, approvals_path %></strong><br>
+        <strong><%= marker.name %></strong><br>
         <p id="marker-period"><%= marker.period.name %></p>
         <% if marker.progress == 0 %>
           <p id="text-no-vote"><em>En attente des premiers votes</em></p>
