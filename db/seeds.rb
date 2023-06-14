@@ -153,6 +153,38 @@ Monument.create!(
   period_id: french_revolution.id,
   user_id: basile.id
 )
+
+Monument.create!(
+  name: "Le Chateau de Rennes",
+  address: "Rennes",
+  description: "La bastille Saint-Antoine, souvent appelée
+  simplement la Bastille et anciennement fort et bastide
+  Saint-Anthoine lez Paris1,2, est une forteresse construite
+  au xive siècle, à l'emplacement du débouché de la rue
+  Saint-Antoine sur l’actuelle place de la Bastille à Paris.
+  Devenue une prison, considérée comme le symbole du despotisme
+  monarchique, elle fut totalement détruite lors de la Révolution
+  française, après l'événement déclencheur devenu une
+  fête nationale en France : la prise de la Bastille du 14
+  juillet 1789.",
+  wikipedia_url: "https://fr.wikipedia.org/wiki/Bastille",
+  google_earth_url: "https://earth.google.com/web/search/la+bastille+paris/@48.85324435,2.36939165,37.65972245a,319.63561261d,35y,0h,45t,0r/data=CnwaUhJMCiUweDQ3ZTY3MjAxYWNhOTkyMjk6MHgyMzFlYjBjOTY3ZTVlYjEwGZ0lbU81bUhAIdwMN-Dz8wJAKhFsYSBiYXN0aWxsZSBwYXJpcxgCIAEiJgokCaK61faIvTNAEaK61faIvTPAGfjCsggcUkFAISzUwZX7lVDAKAI",
+  progress: 11,
+  period_id: french_revolution.id,
+  user_id: basile.id
+)
+
+Monument.create!(
+  name: "Cathédrale Saint-Etienne",
+  address: "Toulouse",
+  description: "La cathédrale Saint-Étienne de Toulouse est une cathédrale catholique romaine du centre historique de Toulouse, dans le département de la Haute-Garonne en France. Elle a donné son nom au quartier qui l'entoure.",
+  wikipedia_url: "https://fr.wikipedia.org/wiki/Cath%C3%A9drale_Saint-%C3%89tienne_de_Toulouse",
+  google_earth_url: "https://earth.google.com/web/search/la+bastille+paris/@48.85324435,2.36939165,37.65972245a,319.63561261d,35y,0h,45t,0r/data=CnwaUhJMCiUweDQ3ZTY3MjAxYWNhOTkyMjk6MHgyMzFlYjBjOTY3ZTVlYjEwGZ0lbU81bUhAIdwMN-Dz8wJAKhFsYSBiYXN0aWxsZSBwYXJpcxgCIAEiJgokCaK61faIvTNAEaK61faIvTPAGfjCsggcUkFAISzUwZX7lVDAKAI",
+  progress: 11,
+  period_id: french_revolution.id,
+  user_id: jean.id
+)
+
 puts "Bastille créée"
 
 puts "monuments validés"
@@ -222,6 +254,23 @@ Event.create!(
   longitude: 2.3510,
   period_id: french_revolution.id,
   user_id: basile.id
+)
+
+Event.create!(
+  name: "Bataille Navale",
+  start_day: 6,
+  start_month: 9,
+  start_year: 1793,
+  end_day: 8,
+  end_month: 9,
+  end_year: 1793,
+  address: 'Marseille',
+  description: "La bataille de Hondschoote (ou bataille d'Hondschoote) oppose les troupes de la République française à celles de la Première Coalition le 8 septembre 1793 (22 fructidor de l'an I). Le général Houchard bat le duc d’York et Albany et libère Dunkerque. Cette victoire est capitale pour la France de 1793, elle intervient après plusieurs défaites et aura un impact psychologique positif considérable d'autant plus qu'elle sera suivie peu de temps après par une nouvelle victoire française lors de la bataille de Wattignies.",
+  wikipedia_url: "https://fr.wikipedia.org/wiki/Bataille_de_Hondschoote",
+  youtube_url: "https://www.youtube.com/results?search_query=Bataille+de+Hondschoote",
+  progress: 12,
+  period_id: french_revolution.id,
+  user_id: jean.id
 )
 puts "Bataille de Hondschoote créée"
 
