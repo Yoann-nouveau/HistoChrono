@@ -5,13 +5,19 @@
       <%= title %>
     </button>
   </h2>
-  <div id="flush-pending-collapse<%=marker_type.capitalize%>" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+  <div id="flush-pending-collapse<%=marker_type.capitalize%>" class="accordion-collapse collapse" data-bs-parent="#accordionFlushPendingExample">
     <div class="accordion-body">
-      <ul>
-        <% markers.each do |marker| %>
-          <li><%= link_to marker.name, period_path(marker.period_id) %></li>
+      <% markers.each do |marker| %>
+        <strong><%= link_to marker.name, approvals_path %></strong><br>
+        <p id="marker-period"><%= marker.period.name %></p>
+        <% if marker.progress == 0 %>
+          <p id="text-no-vote"><em>En attente des premiers votes</em></p>
+          <% else %>
+          <div class="progress" role="progressbar" aria-label="Success striped example" aria-valuenow="5" aria-valuemin="0" aria-valuemax="10">
+            <div class="progress-bar progress-bar-striped progress-bar-animated <%= marker.progress > 0 ? "bg-success" : "bg-danger" %>" style="width: <%= (6.67*(marker.progress + 5))%>%"><strong><%= marker.progress %>/10</strong></div>
+          </div>
         <% end %>
-      </ul>
+      <% end %>
     </div>
   </div>
 </div>
