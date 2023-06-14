@@ -15,4 +15,8 @@ class Personality < ApplicationRecord
     inclusion: { in: 1600..Date.today.year }
 
   validates :death_year, inclusion: { in: 1600..Date.today.year }, allow_blank: true
+
+  def name
+    fullname
+  end
 end
