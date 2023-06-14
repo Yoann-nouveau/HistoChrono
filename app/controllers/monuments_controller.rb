@@ -6,7 +6,7 @@ class MonumentsController < ApplicationController
     @monument.user = current_user
     @monument.period = @period
     if @monument.save
-      redirect_to period_path(@period)
+      redirect_to markers_path(), notice: "Merci pour votre contibution, votre marqueur est en attente de validation par la communauté"
     else
       render :new, status: :unprocessable_entity
     end
