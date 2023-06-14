@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(*)
     period_path(Period.first)
+  end
 
   def configure_permitted_parameters
     # For additional fields in app/views/devise/registrations/new.html.erb
