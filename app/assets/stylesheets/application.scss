@@ -12,6 +12,14 @@
 @import "components/index";
 @import "pages/index";
 
+
+
 .shape {
-  min-height: calc(100vh - 70px);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer {
+  margin-top: auto;
 }
