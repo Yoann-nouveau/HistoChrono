@@ -14,12 +14,12 @@
     <div class="col-sm-2 overflow-auto person-avatar">
       <div class="cards" style="width: max-content;">
         <% @personalities.each do |personality| %>
-          <div class="card-trip">
+          <div class="card-person">
             <a data-bs-toggle="offcanvas" href="#infospersonality<%= personality.id%>" role="button" aria-controls="offcanvasExample">
               <% if personality.photo.attached? %>
-                <%= image_tag personality.photo, class: "avatar", alt: personality.fullname, title: personality.fullname %>
+                <%= image_tag personality.photo, class: "avatar-person", alt: personality.fullname, title: personality.fullname %>
               <% else %>
-                <%= image_tag "no-perso.jpg", class: "avatar", alt: personality.fullname, title: personality.fullname %>
+                <%= image_tag "no-perso.jpg", class: "avatar-person", alt: personality.fullname, title: personality.fullname %>
               <% end %>
             </a>
           </div>
