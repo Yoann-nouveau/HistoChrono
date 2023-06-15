@@ -1,14 +1,17 @@
 .photo-marker {
   margin: 20px;
+  padding-left: 30px;
 }
 
 .offcanvas-title {
   font-size: 36px;
 }
 
+
 .infos-monument {
   .offcanvas-header {
     padding: 10px;
+    padding-left: 50px;
     background-color: #27374D;
     color: white;
     box-shadow: 0px 1px 1px grey;
@@ -39,11 +42,18 @@
   #date_personality{
     font-family: 'Mate SC', serif;
   }
+
+  padding-left: 50px;
+}
+
+.offcanvas.showing, .offcanvas.show:not(.hiding) {
+  width: 70vh;
 }
 
 .infos-event{
   .offcanvas-header{
   padding: 10px;
+  padding-left: 50px;
   background-color: #8B635C;
   color: white;
   box-shadow: 0px 3px 1px grey;
@@ -57,6 +67,7 @@
  .infos-personality{
   .offcanvas-header{
   padding: 10px;
+  padding-left: 50px;
   background-color: #DCBF85;
   color: white;
   box-shadow: 0px 3px 1px grey;
