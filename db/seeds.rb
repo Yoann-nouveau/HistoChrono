@@ -10,7 +10,7 @@ require "open-uri"
 Period.destroy_all
 User.destroy_all
 
-file = URI.open('https://res.cloudinary.com/dsxh5jciu/image/upload/v1686751163/Basil_II_29_eoo4io.webp')
+file = URI.open('https://res.cloudinary.com/dsxh5jciu/image/upload/v1686839159/Prise_de_la_Bastille_klqsqz.jpg')
 revolution = Period.create!(
   name: "La Révolution Française",
   start_date: Date.new(1789, 1, 1),
@@ -151,7 +151,7 @@ maintenant.save
 
 puts "périodes validées"
 
-file = URI.open('')
+file = URI.open('https://res.cloudinary.com/dsxh5jciu/image/upload/v1686751163/Basil_II_29_eoo4io.webp')
 basile = User.new(
   email: "basile@mail.com",
   password: "azerty",
@@ -174,7 +174,8 @@ jean.photo.attach(io: file, filename: "jean", content_type: "image/png")
 jean.save
 puts "users validés"
 
-Monument.create!(
+file = URI.open('https://res.cloudinary.com/dsxh5jciu/image/upload/v1686839159/Prise_de_la_Bastille_klqsqz.jpg')
+bastille = Monument.create!(
   name: "La Bastille",
   address: "Paris",
   description: "La bastille Saint-Antoine, souvent appelée
@@ -195,6 +196,24 @@ Monument.create!(
   period_id: revolution.id,
   user_id: basile.id
 )
+bastille.photo.attach(io: file, filename: "La Bastille", content_type: "image/png")
+bastille.save
+
+
+file = URI.open('https://res.cloudinary.com/dsxh5jciu/image/upload/v1686839860/arc_de_triomphe_de_letoile_.gobaut_gaspard_btv1b10302544h_ph1hy9.jpg')
+arc_de_triomphe = Monument.create!(
+  name: "L'Arc de Triomphe",
+  address: "Place de l'étoile, Paris",
+  description: "L'arc de triomphe de l'Étoile, souvent appelé simplement l'Arc de Triomphe, est un monument situé à Paris, en un point haut à la jonction des territoires des 8e, 16e et 17e arrondissements, notamment au sommet de l'avenue des Champs-Élysées et de l'avenue de la Grande-Armée, lesquelles constituent un grand axe est-ouest parisien partant de la pyramide du Louvre, passant par l'obélisque de La Concorde, l'Arc de Triomphe lui-même et se terminant au loin par l'arche de la Défense. Sa construction, décidée par l'empereur Napoléon Ier, débute en 1806 et s'achève en 1836 sous le règne de Louis-Philippe.",
+  wikipedia_url: "https://fr.wikipedia.org/wiki/Arc_de_triomphe_de_l%27%C3%89toile",
+  google_earth_url: "https://earth.google.com/web/search/arc+de+triomphe/@48.8737917,2.2950275,87.16927714a,666.39422239d,35y,0h,45t,0r/data=CnoaUBJKCiUweDQ3ZTY2ZmVjNzBmYjFkOGY6MHhkOWI1Njc2ZTExMmU2NDNkGWbWUkDab0hAIXm3aLdMXAJAKg9hcmMgZGUgdHJpb21waGUYAiABIiYKJAlTo09rHnBIQBHcUz1hkm9IQBkbi6rKhWoCQCHpL9T26E0CQCgC",
+  progress: 11,
+  period_id: premier_empire.id,
+  user_id: jean.id
+)
+arc_de_triomphe.photo.attach(io: file, filename: "L'Arc de Triomphe", content_type: "image/png")
+arc_de_triomphe.save
+
 
 Monument.create!(
   name: "La Bastille",
@@ -398,7 +417,8 @@ chirac.photo.attach(io: file, filename: "Jacques Chirac", content_type: "image/p
 chirac.save
 puts "personality validés"
 
-Event.create!(
+file = URI.open('https://res.cloudinary.com/dsxh5jciu/image/upload/v1686840249/exposition-playmobil-gendarmerie-hondschoote-dominique-bethune-0_hifpji.jpg')
+hondschoote = Event.create!(
   name: "Bataille de Hondschoote",
   start_day: 6,
   start_month: 9,
@@ -416,6 +436,9 @@ Event.create!(
   period_id: revolution.id,
   user_id: basile.id
 )
+hondschoote.photo.attach(io: file, filename: "Bataille de Hondschoote", content_type: "image/png")
+hondschoote.save
+
 
 Event.create!(
   name: "Bataille Navale",

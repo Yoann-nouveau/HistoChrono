@@ -6,7 +6,7 @@
         <div class="circle <%= "active" if params[:id].to_i == period.id %>">
           <span class="homebox">
             <% if period.photo.attached? %>
-              <%= image_tag period.photo%>
+              <%= image_tag period.photo, class: "img"%>
             <% else %>
               <%= image_tag "no-event.jpg", class: "img"%>
             <% end %>
