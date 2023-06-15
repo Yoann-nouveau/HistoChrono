@@ -302,7 +302,7 @@ louis_xvi = Personality.create!(
 louis_xvi.photo.attach(io: file, filename: "Louis XIV", content_type: "image/png")
 louis_xvi.save
 
-file = URI.open('https://res.cloudinary.com/dsxh5jciu/image/upload/v1686830862/De_Gaulle_1961__cropped_1_t6d83c.jpg')
+file = URI.open('https://res.cloudinary.com/dsxh5jciu/image/upload/v1686835125/charles-de-gaulle-quelles-etaient-ses-recettes-preferees_ooc8yn.jpg')
 de_gaulle = Personality.create!(
   fullname: "Charles de Gaulle",
   birth_day: 22,
@@ -332,7 +332,7 @@ chirac = Personality.create!(
   progress: -1,
   user_id: jean.id
 )
-chirac.photo.attach(io: file, filename: "de Gaulle", content_type: "image/png")
+chirac.photo.attach(io: file, filename: "Jacques Chirac", content_type: "image/png")
 chirac.save
 puts "personality validés"
 
