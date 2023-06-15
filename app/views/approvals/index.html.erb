@@ -1,6 +1,19 @@
 
 <div class="container">
   <% if @monuments.any?{ |data| data.user_id != current_user.id } || @events.any?{ |data| data.user_id != current_user.id } || @personalities.any?{ |data| data.user_id != current_user.id }%>
+  <div class="rules-center">
+    <div class="rules">
+      <h3 class="mb-3">A vos marques, prêt...? Votez !</h3>
+      <p><em>
+        Retrouvez ici les <strong>marqueurs</strong> (<u>monuments, évènements, personnalités</u>)
+        en attente de validation par la <strong>communauté</strong>. Vous pouvez voter une
+        <u>seule fois</u> pour valider ou non la pertinence des informations
+        proposées par le contributeur. Le marqueur doit obtenir la note de
+        <strong>10</strong> pour pouvoir être ajouté à la carte. <br>
+      </p>
+      <p class="mb-5">Revenez régulièrement pour ajouter votre vote et ainsi participer au développement d’HistoChrono !</em></p>
+    </div>
+  </div>
   <% @monuments.each do |data| %>
     <% if data.user_id != current_user.id %>
       <div class="card-center">

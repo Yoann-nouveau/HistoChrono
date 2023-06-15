@@ -93,3 +93,15 @@
   position: relative;
   padding: 15px;
 }
+
+.rules {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 75%;
+}
+
+.rules-center {
+  display: flex;
+  justify-content: center;
+}

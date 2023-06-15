@@ -10,6 +10,10 @@
   <h2><%= data.try(:name) || data.try(:fullname) %></h2>
   <p><%= data.description %></p>
   <p><strong><%= data.try(:address) || data.try("")%></strong></p>
+  <p><strong><%= data.try(:wikipedia_url) || data.try("")%></strong></p>
+  <p><strong><%= data.try(:google_earth_url) || data.try(:youtube_url)%></strong></p>
+
+  <p id="added_by"><em><small>Marqueur proposé par <strong><%= data.user.nickname %></strong> le <%= data.created_at.strftime('%d/%m/%Y') %></small></p></em>
 </div>
 
 <div class="card-approvals-votes">
