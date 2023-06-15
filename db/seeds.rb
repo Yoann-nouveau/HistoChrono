@@ -10,7 +10,7 @@ require "open-uri"
 Period.destroy_all
 User.destroy_all
 
-file = URI.open('https://res.cloudinary.com/dsxh5jciu/image/upload/v1686751163/Basil_II_29_eoo4io.webp')
+file = URI.open('https://res.cloudinary.com/dsxh5jciu/image/upload/v1686839159/Prise_de_la_Bastille_klqsqz.jpg')
 revolution = Period.create!(
   name: "La Révolution Française",
   start_date: Date.new(1789, 1, 1),
@@ -151,7 +151,7 @@ maintenant.save
 
 puts "périodes validées"
 
-file = URI.open('')
+file = URI.open('https://res.cloudinary.com/dsxh5jciu/image/upload/v1686751163/Basil_II_29_eoo4io.webp')
 basile = User.new(
   email: "basile@mail.com",
   password: "azerty",
