@@ -95,3 +95,7 @@
     font-size: 25px;
   }
  }
+
+ .offcanvas-body::-webkit-scrollbar {
+  display: none;
+}
