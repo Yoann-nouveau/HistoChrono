@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light <%= params[:action] == "home" ? "navbar-margin-off" : "navbar-lewagon" %>">
   <div class="container-fluid">
     <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "https://cdn.discordapp.com/attachments/1010924362351779841/1115278045973069925/Singularity_imagine_a_minimalist_logo_modern_for_a_website_blac_6fdfffa9-6269-43bb-b76c-c1f2e119226a.png" %>
