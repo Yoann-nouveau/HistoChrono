@@ -112,7 +112,7 @@ export default class extends Controller {
           'layout': {},
           'paint': {
               'fill-color': '#9DB2BF', // blue color fill
-              'fill-opacity': 0.5
+              'fill-opacity': 0.6
           }
       });
       // Add a black outline around the polygon.
@@ -134,7 +134,7 @@ export default class extends Controller {
     this.map = new mapboxgl.Map({
       container: this.displaymapTarget,
       minZoom: 4,
-      style: "mapbox://styles/alexmcfly/clikchnpc00en01qvd5kjhaz3"
+      style: "mapbox://styles/alexmcfly/cliwujhn0002j01pm01sm2xtt"
     })
     this.map.addControl(new mapboxgl.FullscreenControl());
     this.map.addControl(new mapboxgl.NavigationControl());
