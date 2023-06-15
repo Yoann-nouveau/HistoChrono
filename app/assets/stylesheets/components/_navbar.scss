@@ -1,7 +1,15 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: #27374D;
-  margin-bottom: 35px;
+  margin-bottom: 30px;
+  img {
+    border-radius: 50%;
+  }
+}
+
+.navbar-margin-off {
+  justify-content: space-between;
+  background: #27374D;
   img {
     border-radius: 50%;
   }
@@ -11,7 +19,15 @@
   flex-grow: 0;
 }
 
+.navbar-margin-off .navbar-collapse {
+  flex-grow: 0;
+}
+
 .navbar-lewagon .navbar-brand img {
+  width: 40px;
+}
+
+.navbar-margin-off .navbar-brand img {
   width: 40px;
 }
 
