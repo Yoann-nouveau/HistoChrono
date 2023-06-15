@@ -7,7 +7,20 @@
     clear: both;
 }
 
+.person {
+  display: flex;
+  justify-content: flex-end;
+  text-align: center;
+  align-items: center;
+  p {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
 
+.person-avatar::-webkit-scrollbar {
+  display: none;
+}
 .main-timeline:before{
     content: "";
     width: 3px;

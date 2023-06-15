@@ -31,7 +31,7 @@ class PeriodsController < ApplicationController
         marker_html: render_to_string(partial: "event_marker", locals: { event: event })
       }
     end
-    @personalities = @period.personalities#.where("progress >= ?", 10)
+    @personalities = @period.personalities.where("progress >= ?", 10)
     @polygon = @period.polygons
     @event = Event.new
     @monument = Monument.new
