@@ -189,7 +189,7 @@ puts "Bastille créée"
 
 puts "monuments validés"
 
-file = URI.open('https://res.cloudinary.com/dsxh5jciu/image/upload/v1686831088/Jacques-Louis_David_-_The_Emperor_Napoleon_in_His_Study_at_the_Tuileries_-_Google_Art_Project_2_ylibky.jpg')
+file = URI.open('https://res.cloudinary.com/dsxh5jciu/image/upload/v1686835655/francois-gerard-napoleon-ier-en-costume-du-sacre_dpks5d.jpg')
 napoleon = Personality.create!(
   fullname: "Napoléon Bonaparte",
   birth_day: 15,
@@ -211,7 +211,7 @@ napoleon = Personality.create!(
 napoleon.photo.attach(io: file, filename: "Napoléon Bonaparte", content_type: "image/png")
 napoleon.save
 
-file = URI.open('https://res.cloudinary.com/dsxh5jciu/image/upload/v1686831298/800px-Marie-Antoinette__koningin_der_Fransen_kaonuo.jpg')
+file = URI.open('https://res.cloudinary.com/dsxh5jciu/image/upload/v1686835906/12945021_fizx0h.webp')
 marie_antoinette = Personality.create!(
   fullname: "Marie-Antoinette d'Autriche",
   birth_day: 2,
@@ -229,7 +229,7 @@ marie_antoinette = Personality.create!(
 marie_antoinette.photo.attach(io: file, filename: "Marie-Antoinette d'Autriche", content_type: "image/png")
 marie_antoinette.save
 
-file = URI.open('https://res.cloudinary.com/dsxh5jciu/image/upload/v1686832043/Robespierre_1_bugrab.jpg')
+file = URI.open('https://res.cloudinary.com/dsxh5jciu/image/upload/v1686835972/o-ROBESPIERRE-facebook_xnrbew.jpg')
 robespierre = Personality.create!(
   fullname: "Maximilien de Robespierre",
   birth_day: 6,
@@ -247,7 +247,7 @@ robespierre = Personality.create!(
 robespierre.photo.attach(io: file, filename: "Maximilien de Robespierre", content_type: "image/png")
 robespierre.save
 
-file = URI.open('https://res.cloudinary.com/dsxh5jciu/image/upload/v1686832711/Jean-Paul_Marat_portre_ki6xr9.jpg')
+file = URI.open('https://res.cloudinary.com/dsxh5jciu/image/upload/v1686835814/marat_lubmxo.png')
 marat = Personality.create!(
   fullname: "Jean-Paul Marat",
   birth_day: 24,
@@ -265,7 +265,7 @@ marat = Personality.create!(
 marat.photo.attach(io: file, filename: "Jean-Paul Marat", content_type: "image/png")
 marat.save
 
-file = URI.open('https://res.cloudinary.com/dsxh5jciu/image/upload/v1686833850/Marie-Olympe-de-Gouges_l4oi7l.jpg')
+file = URI.open('https://res.cloudinary.com/dsxh5jciu/image/upload/v1686836016/marie-olympe-de-gouges-portrait-peinture-1600_jlzotr.jpg')
 de_gouge = Personality.create!(
   fullname: "Olympe de Gouges",
   birth_day: 7,
@@ -284,7 +284,7 @@ de_gouge.photo.attach(io: file, filename: "Olympe de Gouges", content_type: "ima
 de_gouge.save
 
 
-file = URI.open('https://res.cloudinary.com/dsxh5jciu/image/upload/v1686830565/800px-Louis_XVI_en_costume_de_sacre_-_Joseph-Siffred_Duplessis_zgxodv.jpg')
+file = URI.open('https://res.cloudinary.com/dsxh5jciu/image/upload/v1686836058/v.2016.2_003_r5huex.jpg')
 louis_xvi = Personality.create!(
   fullname: "Louis XVI",
   birth_day: 23,
