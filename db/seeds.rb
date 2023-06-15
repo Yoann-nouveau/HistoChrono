@@ -10,7 +10,7 @@ require "open-uri"
 Period.destroy_all
 User.destroy_all
 
-french_revolution = Period.create!(
+revolution = Period.create!(
   name: "La Révolution Française",
   start_date: Date.new(1789, 1, 1),
   end_date: Date.new(1796, 12, 31),
@@ -150,7 +150,7 @@ Monument.create!(
   progress: 9,
   latitude: 48.5112,
   longitude: 2.2209,
-  period_id: french_revolution.id,
+  period_id: revolution.id,
   user_id: basile.id
 )
 
@@ -170,7 +170,7 @@ Monument.create!(
   wikipedia_url: "https://fr.wikipedia.org/wiki/Bastille",
   google_earth_url: "https://earth.google.com/web/search/la+bastille+paris/@48.85324435,2.36939165,37.65972245a,319.63561261d,35y,0h,45t,0r/data=CnwaUhJMCiUweDQ3ZTY3MjAxYWNhOTkyMjk6MHgyMzFlYjBjOTY3ZTVlYjEwGZ0lbU81bUhAIdwMN-Dz8wJAKhFsYSBiYXN0aWxsZSBwYXJpcxgCIAEiJgokCaK61faIvTNAEaK61faIvTPAGfjCsggcUkFAISzUwZX7lVDAKAI",
   progress: 11,
-  period_id: french_revolution.id,
+  period_id: revolution.id,
   user_id: basile.id
 )
 
@@ -181,7 +181,7 @@ Monument.create!(
   wikipedia_url: "https://fr.wikipedia.org/wiki/Cath%C3%A9drale_Saint-%C3%89tienne_de_Toulouse",
   google_earth_url: "https://earth.google.com/web/search/la+bastille+paris/@48.85324435,2.36939165,37.65972245a,319.63561261d,35y,0h,45t,0r/data=CnwaUhJMCiUweDQ3ZTY3MjAxYWNhOTkyMjk6MHgyMzFlYjBjOTY3ZTVlYjEwGZ0lbU81bUhAIdwMN-Dz8wJAKhFsYSBiYXN0aWxsZSBwYXJpcxgCIAEiJgokCaK61faIvTNAEaK61faIvTPAGfjCsggcUkFAISzUwZX7lVDAKAI",
   progress: 11,
-  period_id: french_revolution.id,
+  period_id: revolution.id,
   user_id: jean.id
 )
 
@@ -189,7 +189,8 @@ puts "Bastille créée"
 
 puts "monuments validés"
 
-Personality.create!(
+file = URI.open('https://res.cloudinary.com/dsxh5jciu/image/upload/v1686831088/Jacques-Louis_David_-_The_Emperor_Napoleon_in_His_Study_at_the_Tuileries_-_Google_Art_Project_2_ylibky.jpg')
+napoleon = Personality.create!(
   fullname: "Napoléon Bonaparte",
   birth_day: 15,
   birth_month: 8,
@@ -207,9 +208,102 @@ Personality.create!(
   progress: 12,
   user_id: basile.id
 )
-puts "Napoléon créé"
+napoleon.photo.attach(io: file, filename: "Napoléon Bonaparte", content_type: "image/png")
+napoleon.save
 
-Personality.create!(
+file = URI.open('https://res.cloudinary.com/dsxh5jciu/image/upload/v1686831298/800px-Marie-Antoinette__koningin_der_Fransen_kaonuo.jpg')
+marie_antoinette = Personality.create!(
+  fullname: "Marie-Antoinette d'Autriche",
+  birth_day: 2,
+  birth_month: 11,
+  birth_year: 1755,
+  death_day: 16,
+  death_month: 10,
+  death_year: 1793,
+  description: "Marie-Antoinette Josèphe Jeanne de Habsbourg-Lorraine, née le 2 novembre 1755 à Vienne en Autriche et morte guillotinée le 16 octobre 1793 sur la place de la Révolution à Paris, est reine de France et de Navarre de 1774 à 1791, puis reine des Français de 1791 à 1792. Elle est la dernière reine de l’Ancien Régime.",
+  wikipedia_url: "https://fr.wikipedia.org/wiki/Marie-Antoinette_d'Autriche",
+  period_id: revolution.id,
+  progress: 12,
+  user_id: basile.id
+)
+marie_antoinette.photo.attach(io: file, filename: "Marie-Antoinette d'Autriche", content_type: "image/png")
+marie_antoinette.save
+
+file = URI.open('https://res.cloudinary.com/dsxh5jciu/image/upload/v1686832043/Robespierre_1_bugrab.jpg')
+robespierre = Personality.create!(
+  fullname: "Maximilien de Robespierre",
+  birth_day: 6,
+  birth_month: 5,
+  birth_year: 1758,
+  death_day: 28,
+  death_month: 7,
+  death_year: 1794,
+  description: "Maximilien de Robespierre, ou Maximilien Robespierre1, est un avocat et homme politique français né le 6 mai 1758 à Arras (Artois, aujourd'hui Pas-de-Calais) et mort guillotiné le 10 thermidor an II (28 juillet 1794) à Paris, place de la Révolution (actuelle place de la Concorde). Il est l'une des principales figures de la Révolution française et demeure aussi l'un des personnages les plus controversés de cette période.",
+  wikipedia_url: "https://fr.wikipedia.org/wiki/Maximilien_de_Robespierre",
+  period_id: revolution.id,
+  progress: 12,
+  user_id: jean.id
+)
+robespierre.photo.attach(io: file, filename: "Maximilien de Robespierre", content_type: "image/png")
+robespierre.save
+
+file = URI.open('https://res.cloudinary.com/dsxh5jciu/image/upload/v1686832711/Jean-Paul_Marat_portre_ki6xr9.jpg')
+marat = Personality.create!(
+  fullname: "Jean-Paul Marat",
+  birth_day: 24,
+  birth_month: 5,
+  birth_year: 1743,
+  death_day: 13,
+  death_month: 7,
+  death_year: 1793,
+  description: "Jean-Paul Marat, né le 24 mai 1743 à Boudry (Principauté de Neuchâtel) et mort assassiné dans une baignoire le 13 juillet 1793 à Paris, est un médecin, physicien, journaliste et homme politique français. Usurpateur de noblesse avant la chute du régime monarchique, il devient député montagnard à la Convention à l’époque de la Révolution. Son assassinat par Charlotte Corday permet aux hébertistes de faire de lui un martyr de la Révolution et d'installer pendant quelques mois ses restes au Panthéon.",
+  wikipedia_url: "https://fr.wikipedia.org/wiki/Jean-Paul_Marat",
+  period_id: revolution.id,
+  progress: 12,
+  user_id: basile.id
+)
+marat.photo.attach(io: file, filename: "Jean-Paul Marat", content_type: "image/png")
+marat.save
+
+file = URI.open('https://res.cloudinary.com/dsxh5jciu/image/upload/v1686833850/Marie-Olympe-de-Gouges_l4oi7l.jpg')
+de_gouge = Personality.create!(
+  fullname: "Olympe de Gouges",
+  birth_day: 7,
+  birth_month: 5,
+  birth_year: 1748,
+  death_day: 3,
+  death_month: 11,
+  death_year: 1793,
+  description: "Marie Gouze, dite Olympe de Gouges , née le 7 mai 1748 à Montauban et morte guillotinée le 3 novembre 1793 à Paris, est une femme de lettres française, devenue femme politique. Elle est considérée comme l'une des pionnières françaises du féminisme.",
+  wikipedia_url: "https://fr.wikipedia.org/wiki/Olympe_de_Gouges",
+  period_id: revolution.id,
+  progress: 12,
+  user_id: basile.id
+)
+de_gouge.photo.attach(io: file, filename: "Olympe de Gouges", content_type: "image/png")
+de_gouge.save
+
+
+file = URI.open('https://res.cloudinary.com/dsxh5jciu/image/upload/v1686830565/800px-Louis_XVI_en_costume_de_sacre_-_Joseph-Siffred_Duplessis_zgxodv.jpg')
+louis_xvi = Personality.create!(
+  fullname: "Louis XVI",
+  birth_day: 23,
+  birth_month: 8,
+  birth_year: 1754,
+  death_day: 21,
+  death_month: 9,
+  death_year: 1792,
+  description: "Louis XVI, né le 23 août 1754 à Versailles sous le nom de Louis-Auguste de France et mort guillotiné le 21 janvier 1793 à Paris, est roi de France et de Navarre du 10 mai 1774 au 6 novembre 1789, puis roi des Français jusqu’au 21 septembre 1792. Il est le dernier roi de France de la période dite de l'Ancien Régime.",
+  wikipedia_url: "https://fr.wikipedia.org/wiki/Louis_XVI",
+  period_id: revolution.id,
+  progress: 12,
+  user_id: basile.id
+)
+louis_xvi.photo.attach(io: file, filename: "Louis XIV", content_type: "image/png")
+louis_xvi.save
+
+file = URI.open('https://res.cloudinary.com/dsxh5jciu/image/upload/v1686830862/De_Gaulle_1961__cropped_1_t6d83c.jpg')
+de_gaulle = Personality.create!(
   fullname: "Charles de Gaulle",
   birth_day: 22,
   birth_month: 11,
@@ -223,9 +317,12 @@ Personality.create!(
   progress: 5,
   user_id: jean.id
 )
+de_gaulle.photo.attach(io: file, filename: "de Gaulle", content_type: "image/png")
+de_gaulle.save
 puts "De Gaulle créé"
 
-Personality.create!(
+file = URI.open('https://res.cloudinary.com/dsxh5jciu/image/upload/v1686830972/Jacques_Chirac__1997___cropped_bqod0q.jpg')
+chirac = Personality.create!(
   fullname: "Jacques Chirac",
   birth_year: 1932,
   death_year: 2022,
@@ -235,6 +332,8 @@ Personality.create!(
   progress: -1,
   user_id: jean.id
 )
+chirac.photo.attach(io: file, filename: "de Gaulle", content_type: "image/png")
+chirac.save
 puts "personality validés"
 
 Event.create!(
@@ -252,7 +351,7 @@ Event.create!(
   progress: 7,
   latitude: 58.5849,
   longitude: 2.3510,
-  period_id: french_revolution.id,
+  period_id: revolution.id,
   user_id: basile.id
 )
 
@@ -269,7 +368,7 @@ Event.create!(
   wikipedia_url: "https://fr.wikipedia.org/wiki/Bataille_de_Hondschoote",
   youtube_url: "https://www.youtube.com/results?search_query=Bataille+de+Hondschoote",
   progress: 12,
-  period_id: french_revolution.id,
+  period_id: revolution.id,
   user_id: jean.id
 )
 puts "Bataille de Hondschoote créée"
