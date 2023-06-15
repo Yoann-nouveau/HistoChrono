@@ -134,6 +134,7 @@ export default class extends Controller {
     this.map = new mapboxgl.Map({
       container: this.displaymapTarget,
       minZoom: 4,
+      attributionControl: false,
       style: "mapbox://styles/alexmcfly/cliwujhn0002j01pm01sm2xtt"
     })
     this.map.addControl(new mapboxgl.FullscreenControl());

@@ -1,0 +1,29 @@
+<div class="dropup">
+  <button id="button_add" type="button" href="#offcanvasLogin" data-bs-toggle="offcanvas" aria-controls="offcanvasExample">
+    <i class="fa-solid fa-plus"></i>
+  </button>
+
+</div>
+
+
+<div class="offcanvas offcanvas-start" id="offcanvasLogin" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Rejoignez HistoChrono !</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div class="font-info">
+       <p>Vous devez être <strong>connecté</strong> pour pourvoir ajouter des marqueurs <em>(monuments, évènements, personnalités).</em><br>
+       Rejoingez dès maintenant une communauté de passionnés pour participer à la grande aventure <strong>HistoChrono !</strong><br>
+       </p>
+       <ul>
+        <li>📝 - Inscription <strong>gratuite</strong></li>
+        <li>📍 - Possibilité d'ajouter du contenu</li>
+        <li>🌍 - <strong>Partager</strong> votre passion pour l'histoire</li>
+        <li>🏆 - Devenez le contributeur <strong>N°1</strong></li>
+        <li>... et bien d'autres avantages encore !</li>
+       </ul>
+       <p>N'hésitez plus, <%= link_to "inscrivez-vous", new_user_registration_path, class:"link-devise" %> dès maintennant 🚀</p>
+    </div>
+  </div>
+</div>
