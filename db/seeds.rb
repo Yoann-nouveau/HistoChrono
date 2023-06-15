@@ -217,7 +217,7 @@ arc_de_triomphe.save
 
 Monument.create!(
   name: "La Bastille",
-  address: "Vendée",
+  address: "Lyon",
   description: "La bastille Saint-Antoine, souvent appelée
   simplement la Bastille et anciennement fort et bastide
   Saint-Anthoine lez Paris1,2, est une forteresse construite
@@ -234,6 +234,7 @@ Monument.create!(
   period_id: revolution.id,
   user_id: basile.id
 )
+
 
 Monument.create!(
   name: "Le Chateau de Rennes",
@@ -457,6 +458,46 @@ Event.create!(
   user_id: jean.id
 )
 
+file = URI.open('https://res.cloudinary.com/dsxh5jciu/image/upload/v1686840986/Andrieux_-_La_bataille_de_Waterloo_sixhjh.jpg')
+waterloo = Event.create!(
+  name: "Waterloo",
+  start_day: 18,
+  start_month: 6,
+  start_year: 1815,
+  end_day: 18,
+  end_month: 6,
+  end_year: 1815,
+  address: 'Waterloo, Belgique',
+  description: "La bataille de Waterloo s'est déroulée le 18 juin 1815, en Belgique, à vingt kilomètres au sud de Bruxelles, dans l'actuelle province du Brabant wallon5. Cette bataille a opposé l'armée française dite Armée du Nord, dirigée par l'empereur Napoléon Ier, à l'armée des Alliés, dirigée par le duc de Wellington et composée de Britanniques, d'Allemands (contingents du Hanovre, du Brunswick, du Nassau) et de Néerlandais (unités belges et hollandaises), rejointe par l'armée prussienne commandée par le maréchal Blücher. Elle s'est achevée par la défaite décisive de l'armée française.",
+  wikipedia_url: "https://fr.wikipedia.org/wiki/Bataille_de_Waterloo",
+  youtube_url: "https://www.youtube.com/results?search_query=bataille+de+waterloo",
+  progress: 12,
+  period_id: premier_empire.id,
+  user_id: basile.id
+)
+waterloo.photo.attach(io: file, filename: "Bataille de Waterloo", content_type: "image/png")
+waterloo.save
+
+file = URI.open('https://res.cloudinary.com/dsxh5jciu/image/upload/v1686840986/Andrieux_-_La_bataille_de_Waterloo_sixhjh.jpg')
+waterloo = Event.create!(
+  name: "Waterloo",
+  start_day: 18,
+  start_month: 6,
+  start_year: 1815,
+  end_day: 18,
+  end_month: 6,
+  end_year: 1815,
+  address: 'Turin, Italie',
+  description: "La bataille de Waterloo s'est déroulée le 18 juin 1815, en Belgique, à vingt kilomètres au sud de Bruxelles, dans l'actuelle province du Brabant wallon5. Cette bataille a opposé l'armée française dite Armée du Nord, dirigée par l'empereur Napoléon Ier, à l'armée des Alliés, dirigée par le duc de Wellington et composée de Britanniques, d'Allemands (contingents du Hanovre, du Brunswick, du Nassau) et de Néerlandais (unités belges et hollandaises), rejointe par l'armée prussienne commandée par le maréchal Blücher. Elle s'est achevée par la défaite décisive de l'armée française.",
+  wikipedia_url: "https://fr.wikipedia.org/wiki/Bataille_de_Waterloo",
+  youtube_url: "https://www.youtube.com/results?search_query=bataille+de+waterloo",
+  progress: 12,
+  period_id: premier_empire.id,
+  user_id: basile.id
+)
+waterloo.photo.attach(io: file, filename: "Bataille de Waterloo", content_type: "image/png")
+waterloo.save
+
 Event.create!(
   name: "Bataille Navale",
   start_day: 6,
@@ -471,6 +512,40 @@ Event.create!(
   youtube_url: "https://www.youtube.com/results?search_query=Bataille+de+Hondschoote",
   progress: 12,
   period_id: revolution.id,
+  user_id: jean.id
+)
+
+Event.create!(
+  name: "Bataille Navale",
+  start_day: 6,
+  start_month: 9,
+  start_year: 1793,
+  end_day: 8,
+  end_month: 9,
+  end_year: 1793,
+  address: 'Brest',
+  description: "La bataille de Hondschoote (ou bataille d'Hondschoote) oppose les troupes de la République française à celles de la Première Coalition le 8 septembre 1793 (22 fructidor de l'an I). Le général Houchard bat le duc d’York et Albany et libère Dunkerque. Cette victoire est capitale pour la France de 1793, elle intervient après plusieurs défaites et aura un impact psychologique positif considérable d'autant plus qu'elle sera suivie peu de temps après par une nouvelle victoire française lors de la bataille de Wattignies.",
+  wikipedia_url: "https://fr.wikipedia.org/wiki/Bataille_de_Hondschoote",
+  youtube_url: "https://www.youtube.com/results?search_query=Bataille+de+Hondschoote",
+  progress: 12,
+  period_id: premier_empire.id,
+  user_id: jean.id
+)
+
+Event.create!(
+  name: "Bataille Navale",
+  start_day: 6,
+  start_month: 9,
+  start_year: 1793,
+  end_day: 8,
+  end_month: 9,
+  end_year: 1793,
+  address: 'Lille',
+  description: "La bataille de Hondschoote (ou bataille d'Hondschoote) oppose les troupes de la République française à celles de la Première Coalition le 8 septembre 1793 (22 fructidor de l'an I). Le général Houchard bat le duc d’York et Albany et libère Dunkerque. Cette victoire est capitale pour la France de 1793, elle intervient après plusieurs défaites et aura un impact psychologique positif considérable d'autant plus qu'elle sera suivie peu de temps après par une nouvelle victoire française lors de la bataille de Wattignies.",
+  wikipedia_url: "https://fr.wikipedia.org/wiki/Bataille_de_Hondschoote",
+  youtube_url: "https://www.youtube.com/results?search_query=Bataille+de+Hondschoote",
+  progress: 12,
+  period_id: premier_empire.id,
   user_id: jean.id
 )
 puts "Bataille de Hondschoote créée"
