@@ -1,6 +1,6 @@
 
 <div class="container">
-
+  <% if @monuments.any?{ |data| data.user_id != current_user.id } || @events.any?{ |data| data.user_id != current_user.id } || @personalities.any?{ |data| data.user_id != current_user.id }%>
   <% @monuments.each do |data| %>
     <% if data.user_id != current_user.id %>
       <div class="card-center">
@@ -33,5 +33,14 @@
         </div>
     <% end %>
   <% end %>
+  <% else %>
 
+    <div class="card-center">
+      <div class="card-congrat">
+        <h2>🎉 Félicitations ! 🎉</h2>
+        <p><strong>HistoChrono</strong> vous remercie pour votre contribution.</p>
+        <p><em>Revenez plus tard pour de nouveaux votes !</em></p>
+      </div>
+    </div>
+  <% end %>
 </div>
