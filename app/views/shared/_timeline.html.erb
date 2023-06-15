@@ -3,11 +3,15 @@
   <% Period.all.order(:start_date).each do |period| %>
     <div class="timeline">
       <div class="timeline-content">
-          <div class="circle <%= "active" if params[:id].to_i == period.id %>">
-            <span class="homebox">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Prise_de_la_Bastille.jpg/495px-Prise_de_la_Bastille.jpg" class="img">
-            </span>
-          </div>
+        <div class="circle <%= "active" if params[:id].to_i == period.id %>">
+          <span class="homebox">
+            <% if period.photo.attached? %>
+              <%= image_tag period.photo%>
+            <% else %>
+              <%= image_tag "no-event.jpg", class: "img"%>
+            <% end %>
+          </span>
+        </div>
 
         <div class="content">
             <%= link_to period.name, period_path(period,  anchor: "#{period.id}"), id: "#{period.id}", class:"year" %>
