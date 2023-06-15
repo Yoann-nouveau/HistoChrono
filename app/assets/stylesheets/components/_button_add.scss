@@ -39,6 +39,11 @@
 .dropdown-item:hover {
   .fa-solid{
   color: #27374D;
+  transition: 0.3s;
+  }
+
+  .active {
+    transition: 0.3s;
   }
 }
 
