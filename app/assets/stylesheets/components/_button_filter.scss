@@ -11,3 +11,26 @@
   opacity: 0.8;
   height: 50px;
 }
+
+.period-add-list {
+  li {
+    background-color: #27374D;
+    border-radius: 5px;
+    font-family: 'Mate SC', serif;
+  }
+
+  i.fa-solid {
+    color:white;
+  }
+
+}
+
+#filter-event {
+  padding: 10px;
+  width: 80px;
+}
+
+#filter-monument {
+  padding-left: 10px;
+  width: 80px;
+}
