@@ -2,8 +2,16 @@
   <%= render "shared/display_infosevent" %>
   <%= render "shared/display_infosmonument" %>
   <%= render "shared/display_infospersonality" %>
+
   <div class="row" id="personalities-row">
-    <div class="col-sm-2 overflow-auto">
+<div class="col-sm-2"></div>
+
+    <div class="col-sm-3 person">
+      <% unless @personalities.length < 1 %>
+      <p><strong><%=@period.name%></strong> <br><em>Figures historiques :</em></p>
+      <% end %>
+    </div>
+    <div class="col-sm-2 overflow-auto person-avatar">
       <div class="cards" style="width: max-content;">
         <% @personalities.each do |personality| %>
           <div class="card-trip">
@@ -18,7 +26,7 @@
         <% end %>
       </div>
     </div>
-    <div class="col-sm-4"></div>
+<div class="col-sm-2"></div>
     <div class="search-row col-sm-3" >
       <div style="width: 120px;">
         <%= render "shared/searchbar" %>
