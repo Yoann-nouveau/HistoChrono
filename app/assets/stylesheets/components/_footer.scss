@@ -1,7 +1,7 @@
 
 .footer {
   background-color: #27374D;
-  color: white;
+  color: rgb(189, 185, 185);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -33,5 +33,6 @@
 }
 
 .footer-copyright {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 12px;
 }
